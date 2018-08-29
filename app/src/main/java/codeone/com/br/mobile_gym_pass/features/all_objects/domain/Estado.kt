@@ -5,12 +5,14 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Regiao(
+data class Estado(
+        @SerializedName("IdEstado")
+        var idEstado:Int,
+        @SerializedName("NmEstado")
+        var nmEstado:String,
         @SerializedName("IdRegiao")
         var idRegiao:Int,
-        @SerializedName("NmRegiao")
-        var nmRegiao:String,
-        @SerializedName("Estado")
-        var estado:MutableList<Estado>
-):Parcelable {
+        @SerializedName("Localizacao")
+        var localizacao: MutableList<Localizacao>
+): Parcelable {
 }
