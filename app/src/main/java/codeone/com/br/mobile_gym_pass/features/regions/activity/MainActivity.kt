@@ -1,30 +1,33 @@
-package codeone.com.br.mobile_gym_pass.features.all_objects.activity
+package codeone.com.br.mobile_gym_pass.features.regions.activity
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
+import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import codeone.com.br.mobile_gym_pass.R
 import codeone.com.br.mobile_gym_pass.commons.activity.BaseActivity
-import codeone.com.br.mobile_gym_pass.commons.util.getStrings
-import codeone.com.br.mobile_gym_pass.features.all_objects.presenter.MainPresenter
-import codeone.com.br.mobile_gym_pass.features.all_objects.service.AllObjectService
+import codeone.com.br.mobile_gym_pass.features.company.adapter.EmpresaAdapter
+import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
+import codeone.com.br.mobile_gym_pass.features.regions.presenter.MainPresenter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.fragment_company.*
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener, MainPresenter.ViewCallBack {
 
     private val presenter by lazy {MainPresenter(this)}
+    private var adapter:EmpresaAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
-        presenter.taskRegions()
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -37,8 +40,30 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+
+        presenter.onViewCreated()
     }
 
+    override fun setUpRecycler() {
+        rvCompany.layoutManager = LinearLayoutManager(this)
+        rvCompany.itemAnimator = DefaultItemAnimator()
+    }
+
+    override fun setAllCompany(company: MutableList<Empresa>) {
+
+        rvCompany.visibility = View.VISIBLE
+        if(adapter == null){
+            adapter = EmpresaAdapter(this, company, onClickItem())
+            rvCompany.adapter = adapter
+        }else{
+            adapter?.setList(company)
+            adapter?.notifyDataSetChanged()
+        }
+    }
+
+    private fun onClickItem():(Empresa) -> Unit = {
+        company ->  null
+    }
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)

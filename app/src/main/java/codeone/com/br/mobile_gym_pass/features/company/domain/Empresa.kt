@@ -1,6 +1,7 @@
-package codeone.com.br.mobile_gym_pass.features.all_objects.domain
+package codeone.com.br.mobile_gym_pass.features.company.domain
 
 import android.os.Parcelable
+import codeone.com.br.mobile_gym_pass.features.regions.domain.Box
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 

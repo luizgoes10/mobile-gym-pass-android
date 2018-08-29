@@ -1,10 +1,9 @@
-package codeone.com.br.mobile_gym_pass.features.all_objects.service
+package codeone.com.br.mobile_gym_pass.features.regions.service
 
 import codeone.com.br.mobile_gym_pass.commons.constant.WebService
 import codeone.com.br.mobile_gym_pass.commons.util.createRetrofitService
-import codeone.com.br.mobile_gym_pass.features.all_objects.domain.Regiao
+import codeone.com.br.mobile_gym_pass.features.regions.domain.Regiao
 import retrofit2.Call
-import retrofit2.Retrofit
 import retrofit2.http.GET
 
 class AllObjectService {
