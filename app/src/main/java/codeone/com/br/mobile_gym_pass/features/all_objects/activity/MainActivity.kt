@@ -9,15 +9,22 @@ import android.view.Menu
 import android.view.MenuItem
 import codeone.com.br.mobile_gym_pass.R
 import codeone.com.br.mobile_gym_pass.commons.activity.BaseActivity
+import codeone.com.br.mobile_gym_pass.commons.util.getStrings
+import codeone.com.br.mobile_gym_pass.features.all_objects.presenter.MainPresenter
+import codeone.com.br.mobile_gym_pass.features.all_objects.service.AllObjectService
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
-class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener, MainPresenter.ViewCallBack {
+
+    private val presenter by lazy {MainPresenter(this)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
+        presenter.taskRegions()
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)

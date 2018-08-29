@@ -2,7 +2,12 @@
 
 buildscript {
     ext.kotlin_version = '1.2.61'
-    repositories {
+    ext.anko_version = '0.10.5'
+    ext.android_suport_version = '27.1.1'
+    ext.retrofit_version = '2.4.0'
+    ext.picasso_version = '2.5.2'
+    ext.rxkotlin_version = '2.3.0'
+            repositories {
         google()
         jcenter()
     }

@@ -16,13 +16,14 @@ class GymPassApplication : Application() {
         private const val TAG = "GymPassApplication"
 
         // Singleton da classe Application
-        private var appInstance: GymPassApplication? = null
+        lateinit var appInstance: GymPassApplication
+        private set
 
         fun getInstance(): GymPassApplication {
             if (appInstance == null) {
                 throw IllegalStateException("Configure a classe de Application no AndroidManifest.xml")
             }
-            return appInstance!!
+            return appInstance
         }
 
     }
