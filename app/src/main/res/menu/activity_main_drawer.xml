@@ -3,36 +3,440 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
-    </group>
+    <group
+        android:checkableBehavior="single">
 
-    <item android:title="Communicate">
+        <item
+            android:title="PARANÁ">
+            <menu>
+
+                    <item
+                        android:id="@+id/nav_curitiba"
+                        android:icon="@drawable/ic_public_black_24dp"
+                        android:title="Curitiba"/>
+                    <item
+                        android:id="@+id/nav_pr_outras_regioes"
+                        android:icon="@drawable/ic_public_black_24dp"
+                        android:title="Outras Regiões"/>
+                    <item
+                        android:id="@+id/nav_londrina"
+                        android:icon="@drawable/ic_public_black_24dp"
+                        android:title="Londrina e Região"/>
+                    <item
+                        android:id="@+id/nav_maringa"
+                        android:icon="@drawable/ic_public_black_24dp"
+                        android:title="Maringá e Região"/>
+                    <item
+                        android:id="@+id/nav_foz"
+                        android:icon="@drawable/ic_public_black_24dp"
+                        android:title="Foz do Iguaçú e Região"/>
+            </menu>
+        </item>
+
+    </group>
+    <group
+        android:checkableBehavior="single">
+    <item
+        android:title="SANTA CATARINA">
+
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_floripa"
+                android:icon="@drawable/ic_public_black_24dp"
+                android:title="Florianópolis e Região" />
+
         </menu>
     </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="RIO GRANDE DO SUL">
 
+            <menu>
+                <item
+                    android:id="@+id/nav_porto_alegre"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Porto Alegre" />
+                <item
+                    android:id="@+id/nav_rs_outras_regioes"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Outras Regiões" />
+
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="SÃO PAULO">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_sao_paulo"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="São Paulo" />
+                <item
+                    android:id="@+id/nav_campinas"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Campinas e Região" />
+                <item
+                    android:id="@+id/nav_litoral"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Litoral" />
+                <item
+                    android:id="@+id/nav_interior"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Interior" />
+                <item
+                    android:id="@+id/nav_ribeirao"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Ribeirão Preto e Região" />
+                <item
+                    android:id="@+id/nav_sorocaba"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Sorocaba e Região" />
+                <item
+                    android:id="@+id/nav_piracicaba"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Piracicaba e Região" />
+                <item
+                    android:id="@+id/nav_vale"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Vale do Paraíba" />
+
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="RIO DE JANEIRO">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_rio"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Rio de Janeiro" />
+                <item
+                    android:id="@+id/nav_rj_outras_regioes"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Outras Regiões" />
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="MINAS GERAIS">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_bh"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Belo Horizonte e Região" />
+                <item
+                    android:id="@+id/nav_mg_outras_regioes"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Outras Regiões" />
+                <item
+                    android:id="@+id/nav_triangulo"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Triângulo Mineiro" />
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="ESPÍRITO SANTO">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_vitoria"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Vitória e Região" />
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="BAHIA">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_salvador"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Salvador" />
+
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="CEARÁ">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_fortaleza"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Fortaleza" />
+                <item
+                    android:id="@+id/nav_ce_outras_regioes"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Outras Regiões" />
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="PERNAMBUCO">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_recife"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Recife" />
+                <item
+                    android:id="@+id/nav_pe_outras_regioes"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Outras Regiões" />
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="PARAÍBA">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_joao_pessoa"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="João Pessoa" />
+
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="MARANHÃO">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_sao_luis"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="São Luís" />
+
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="ALAGOAS">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_maceio"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Maceió" />
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="SERGIPE">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_aracaju"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Aracajú" />
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="RIO GRANDE DO NORTE">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_natal"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Natal" />
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="PIAUÍ">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_teresina"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Teresina" />
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="GOIÁS">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_goiania"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Goiânia e Região" />
+                <item
+                    android:id="@+id/nav_sud_sul_go"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Sudoeste e Sul Goiano" />
+                <item
+                    android:id="@+id/nav_go_outras_regioes"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Outras Regiões" />
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="DISTRITO FEDERAL">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_df"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Distrito Federal e Região" />
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="MATO GROSSO">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_cuiaba"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Cuiabá" />
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="MATO GROSSO DO SUL">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_campo_grande"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Campo Grande" />
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="AMAZONAS">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_manaus"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Manaus" />
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="PARÁ">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_belem"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Belém" />
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="RONDÔNIA">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_porto_velho"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Porto Velho" />
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="ACRE">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_rio_branco"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Rio Branco" />
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="AMAPÁ">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_macapa"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Macapá" />
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="TOCANTINS">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_palmas"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Palmas" />
+            </menu>
+        </item>
+    </group>
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:title="RORAIMA">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_boa_vista"
+                    android:icon="@drawable/ic_public_black_24dp"
+                    android:title="Boa Vista" />
+            </menu>
+        </item>
+    </group>
 </menu>
+
