@@ -1,39 +1,48 @@
 package codeone.com.br.mobile_gym_pass.features.regions.activity
 
-import android.content.ClipData
+import android.graphics.Region
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.view.menu.ExpandedMenuView
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.ExpandableListAdapter
 import android.widget.ExpandableListView
 import codeone.com.br.mobile_gym_pass.R
 import codeone.com.br.mobile_gym_pass.commons.activity.BaseActivity
 import codeone.com.br.mobile_gym_pass.features.company.adapter.EmpresaAdapter
 import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
+import codeone.com.br.mobile_gym_pass.features.regions.adapter.ExpandableListAdapter
+import codeone.com.br.mobile_gym_pass.features.regions.domain.Regiao
+import codeone.com.br.mobile_gym_pass.features.regions.domain.util.MenuModel
 import codeone.com.br.mobile_gym_pass.features.regions.presenter.MainPresenter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_company.*
-import org.jetbrains.anko.find
 
-class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener, MainPresenter.ViewCallBack {
+
+
+
+
+
+
+class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedListener, MainPresenter.ViewCallBack {
 
     private val presenter by lazy {MainPresenter(this)}
     private var adapter:EmpresaAdapter? = null
+    private var expandebleListView:ExpandableListView? = null
+    private var expandableListAdapter: ExpandableListAdapter? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -48,6 +57,41 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         nav_view.setNavigationItemSelectedListener(this)
 
         presenter.onViewCreated()
+    }
+
+    override fun setExpandableList(regions: MutableList<Regiao>) {
+        expandebleListView = findViewById(R.id.expandableListView)
+
+        presenter.prepareMenuData(regions)
+    }
+
+
+    override fun populateExpandebleList(headerList:List<MenuModel>, childList:HashMap<MenuModel, List<MenuModel>>) {
+
+        expandableListAdapter = ExpandableListAdapter(this, headerList, childList)
+        expandebleListView?.setAdapter(expandableListAdapter)
+
+        expandableListView.setOnGroupClickListener { parent, v, groupPosition, id ->
+            if (headerList[groupPosition].isGroup) {
+                if (!headerList[groupPosition].hasChildren) {
+                    onBackPressed()
+                }
+            }
+
+            false
+        }
+
+        expandableListView.setOnChildClickListener { parent, v, groupPosition, childPosition, id ->
+            if (childList[headerList[groupPosition]] != null) {
+                val model = childList[headerList[groupPosition]]?.get(childPosition)
+                if (model?.url?.length!! > 0) {
+                    onBackPressed()
+                }
+            }
+
+            false
+        }
+
     }
 
     override fun setUpRecycler() {
