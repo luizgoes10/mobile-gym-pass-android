@@ -18,10 +18,22 @@ open class MainPresenter(val viewCallback: ViewCallBack, val lifecycleOwner: Lif
         fun setAllCompany(company:MutableList<Empresa>)
         fun setExpandableList(regions: MutableList<Regiao>)
         fun populateExpandebleList(headerList:List<MenuModel>, childList:HashMap<MenuModel, List<MenuModel>>)
+
     }
+
+
+    private var auxChildList:HashMap<MenuModel, List<MenuModel>> = linkedMapOf()
+    private var auxHeaderList:MutableList<MenuModel> = mutableListOf()
+    private lateinit var auxChildModel:MenuModel
+    private lateinit var auxChildModelList: MutableList<MenuModel>
+    private lateinit var auxMenuModel: MenuModel
 
     private var headerList:MutableList<MenuModel> = mutableListOf()
     private var childList:HashMap<MenuModel, List<MenuModel>> = linkedMapOf()
+    private lateinit var menuModel: MenuModel
+
+    private lateinit var childModelList:MutableList<MenuModel>
+    private lateinit var childModel:MenuModel
 
     open fun onViewCreated(){
         viewCallback.setUpRecycler()
@@ -31,16 +43,41 @@ open class MainPresenter(val viewCallback: ViewCallBack, val lifecycleOwner: Lif
     open fun prepareMenuData(regions:List<Regiao>){
 
         regions.forEach{
-            var menuModel = MenuModel(it.nmRegiao, true, true,"")
-            var chilModelList:MutableList<MenuModel> = mutableListOf()
+
+            menuModel = MenuModel(it.nmRegiao, true, true,"")
+
+            childModelList = mutableListOf()
+
             it.estado.forEach {
-                var childModel = MenuModel(it.nmEstado, false, false,"")
-                chilModelList?.add(childModel)
+
+                auxMenuModel = MenuModel(it.nmEstado,true,true,"")
+
+                childModel = MenuModel(it.nmEstado, true, true,"")
+
+                childModelList?.add(childModel)
+
+                auxChildModelList = mutableListOf()
+
+                it.localizacao.forEach {
+
+                   auxChildModel = MenuModel(it.nmLocalizacao, true,true,"")
+                   auxChildModelList?.add(auxChildModel)
+                }
+
+                auxHeaderList?.add(auxMenuModel)
+                auxChildList.put(auxMenuModel, auxChildModelList)
             }
             headerList?.add(menuModel)
-            childList.put(menuModel, chilModelList)
+            childList.put(menuModel, childModelList)
         }
-        viewCallback.populateExpandebleList(headerList,childList)
+
+        childList.forEach { t, u ->
+            u.forEach {
+
+            }
+        }
+       viewCallback.populateExpandebleList(headerList, childList)
+
     }
     open fun taskRegions(){
 

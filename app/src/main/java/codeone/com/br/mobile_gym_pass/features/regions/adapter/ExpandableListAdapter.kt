@@ -17,6 +17,7 @@ class ExpandableListAdapter(context: Context, listDataHeader:List<MenuModel>,
     private val context: Context? = context
     private val listHeaderData: List<MenuModel> = listDataHeader
     private val listDataChild: HashMap<MenuModel, List<MenuModel>> = listChildData
+
     override fun getChild(groupPosition: Int, childPosition: Int): MenuModel {
         return listDataChild.get(listHeaderData.get(groupPosition))!!.get(childPosition)
     }
@@ -59,12 +60,12 @@ class ExpandableListAdapter(context: Context, listDataHeader:List<MenuModel>,
 
         val headerTitle = getGroup(groupPosition).menuName
         var convert = convertView
-        if (convert == null) {
+        if (convertView == null) {
             val infalInflater = this.context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             convert = infalInflater.inflate(R.layout.list_group_header, null)
         }
 
-        val lblListHeader = convertView?.findViewById<TextView>(R.id.lblListHeader)
+        val lblListHeader = convert?.findViewById<TextView>(R.id.lblListHeader)
         lblListHeader?.setTypeface(null, Typeface.BOLD)
         lblListHeader?.text = headerTitle
 

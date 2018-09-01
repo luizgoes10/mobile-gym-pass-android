@@ -1,6 +1,5 @@
 package codeone.com.br.mobile_gym_pass.features.regions.activity
 
-import android.graphics.Region
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
@@ -23,11 +22,6 @@ import codeone.com.br.mobile_gym_pass.features.regions.presenter.MainPresenter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_company.*
-
-
-
-
-
 
 
 class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedListener, MainPresenter.ViewCallBack {
@@ -64,6 +58,7 @@ class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedLi
 
         presenter.prepareMenuData(regions)
     }
+
 
 
     override fun populateExpandebleList(headerList:List<MenuModel>, childList:HashMap<MenuModel, List<MenuModel>>) {
