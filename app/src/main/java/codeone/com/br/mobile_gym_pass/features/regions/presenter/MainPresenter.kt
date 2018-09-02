@@ -10,30 +10,53 @@ import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
+import java.util.LinkedHashMap
 
 open class MainPresenter(val viewCallback: ViewCallBack, val lifecycleOwner: LifecycleOwner = viewCallback as LifecycleOwner):BasePresenter(lifecycleOwner) {
     interface ViewCallBack{
 
         fun setUpRecycler()
         fun setAllCompany(company:MutableList<Empresa>)
-        fun setExpandableList(regions: MutableList<Regiao>)
-        fun populateExpandebleList(headerList:List<MenuModel>, childList:HashMap<MenuModel, List<MenuModel>>)
-
+        fun setUpExpandableListView(parent:Array<String>,secondeLevel:MutableList<Array<String>>,
+                                    data: MutableList<LinkedHashMap<String, Array<String>>>)
     }
 
+    private var parent:Array<String> = arrayOf()//"What is View?", "What is  Layout?", "What is Dynamic Views?"
+    internal var q1:Array<String> = arrayOf()//"List View", "Grid View"
+    internal var q2:Array<String> = arrayOf() //"Linear Layout", "Relative Layout"
+    internal var q3:Array<String> = arrayOf()//"Recycle View"
+    internal var q4:Array<String> = arrayOf()
+    internal var q5:Array<String> = arrayOf()
+    internal var des1:Array<String> = arrayOf()//"A layout that organizes its children into a single horizontal or vertical row. It creates a scrollbar if the length of the window exceeds the length of the screen."
+    internal var des2:Array<String> = arrayOf()//"Enables you to specify the location of child objects relative to each other (child A to the left of child B) or to the parent (aligned to the top of the parent)."
+    internal var des3:Array<String> = arrayOf()//"This list contains linear layout information"
+    internal var des4:Array<String> = arrayOf()//"This list contains relative layout information,Displays a scrolling grid of columns and rows"
+    internal var des5:Array<String> = arrayOf()
+    internal var des6:Array<String> = arrayOf()
+    internal var des7:Array<String> = arrayOf()
+    internal var des8:Array<String> = arrayOf()
+    internal var des9:Array<String> = arrayOf()
+    internal var des10:Array<String> = arrayOf()
+    internal var des11:Array<String> = arrayOf()
+    internal var des12:Array<String> = arrayOf()
+    internal var des13:Array<String> = arrayOf()
+    internal var des14:Array<String> = arrayOf()
+    internal var des15:Array<String> = arrayOf()
+    internal var des16:Array<String> = arrayOf()
+    internal var des17:Array<String> = arrayOf()
+    internal var des18:Array<String> = arrayOf()
 
-    private var auxChildList:HashMap<MenuModel, List<MenuModel>> = linkedMapOf()
-    private var auxHeaderList:MutableList<MenuModel> = mutableListOf()
-    private lateinit var auxChildModel:MenuModel
-    private lateinit var auxChildModelList: MutableList<MenuModel>
-    private lateinit var auxMenuModel: MenuModel
-
-    private var headerList:MutableList<MenuModel> = mutableListOf()
-    private var childList:HashMap<MenuModel, List<MenuModel>> = linkedMapOf()
-    private lateinit var menuModel: MenuModel
-
-    private lateinit var childModelList:MutableList<MenuModel>
-    private lateinit var childModel:MenuModel
+    internal var thirdLevelq1 = LinkedHashMap<String, Array<String>>()
+    internal var thirdLevelq2 = LinkedHashMap<String, Array<String>>()
+    internal var thirdLevelq3 = LinkedHashMap<String, Array<String>>()
+    /**
+     * Second level array list
+     */
+    internal var secondLevel: MutableList<Array<String>> = ArrayList()
+    /**
+     * Inner level data
+     */
+    internal var data: MutableList<LinkedHashMap<String, Array<String>>> = ArrayList()
 
     open fun onViewCreated(){
         viewCallback.setUpRecycler()
@@ -42,42 +65,62 @@ open class MainPresenter(val viewCallback: ViewCallBack, val lifecycleOwner: Lif
 
     open fun prepareMenuData(regions:List<Regiao>){
 
-        regions.forEach{
+        parent = Array(regions.size, {i -> regions[i].nmRegiao})
 
-            menuModel = MenuModel(it.nmRegiao, true, true,"")
+        q1 = Array(regions[0].estado.size, { i -> regions[0].estado[i].nmEstado})
 
-            childModelList = mutableListOf()
+        q2 = Array(regions[1].estado.size, {i -> regions[1].estado[i].nmEstado})
 
-            it.estado.forEach {
+        q3 = Array(regions[2].estado.size, {i -> regions[2].estado[i].nmEstado})
 
-                auxMenuModel = MenuModel(it.nmEstado,true,true,"")
+        q4 = Array(regions[3].estado.size, {i -> regions[3].estado[i].nmEstado})
 
-                childModel = MenuModel(it.nmEstado, true, true,"")
+        q5 = Array(regions[4].estado.size, {i -> regions[4].estado[i].nmEstado})
 
-                childModelList?.add(childModel)
+        des1 = Array(regions[0].estado[0].localizacao.size, { i ->
+            regions[0].estado[0].localizacao[i].nmLocalizacao
+        })
 
-                auxChildModelList = mutableListOf()
+        des2 = Array(regions[0].estado[1].localizacao.size, { i ->
+            regions[0].estado[1].localizacao[i].nmLocalizacao
+        })
 
-                it.localizacao.forEach {
+        des3 = Array(regions[0].estado[2].localizacao.size, { i ->
+            regions[0].estado[2].localizacao[i].nmLocalizacao
+        })
 
-                   auxChildModel = MenuModel(it.nmLocalizacao, true,true,"")
-                   auxChildModelList?.add(auxChildModel)
-                }
+        des4 = Array(regions[1].estado[0].localizacao.size, { i ->
+            regions[1].estado[0].localizacao[i].nmLocalizacao
+        })
 
-                auxHeaderList?.add(auxMenuModel)
-                auxChildList.put(auxMenuModel, auxChildModelList)
-            }
-            headerList?.add(menuModel)
-            childList.put(menuModel, childModelList)
-        }
+        des4 = Array(regions[1].estado[1].localizacao.size, { i ->
+            regions[1].estado[1].localizacao[i].nmLocalizacao
+        })
 
-        childList.forEach { t, u ->
-            u.forEach {
+        des5 = Array(regions[1].estado[2].localizacao.size, { i ->
+            regions[1].estado[2].localizacao[i].nmLocalizacao
+        })
 
-            }
-        }
-       viewCallback.populateExpandebleList(headerList, childList)
+        des6 = Array(regions[1].estado[3].localizacao.size, { i ->
+            regions[1].estado[3].localizacao[i].nmLocalizacao
+        })
 
+        secondLevel.add(q1)
+        secondLevel.add(q2)
+        secondLevel.add(q3)
+        secondLevel.add(q4)
+        secondLevel.add(q5)
+        thirdLevelq1.put(q1[0], des1)
+        thirdLevelq1.put(q1[1], des2)
+        thirdLevelq1.put(q1[2], des3)
+      /*  thirdLevelq2.put(q2[1], des4)
+        thirdLevelq3.put(q3[2], des5)
+        thirdLevelq3.put(q3[1], des6)*/
+        data.add(thirdLevelq1)
+        data.add(thirdLevelq2)
+        data.add(thirdLevelq3)
+
+        viewCallback.setUpExpandableListView(parent, secondLevel, data)
     }
     open fun taskRegions(){
 
@@ -90,7 +133,7 @@ open class MainPresenter(val viewCallback: ViewCallBack, val lifecycleOwner: Lif
                     }
 
                     viewCallback.setAllCompany(it[0].estado[0].localizacao[0].empresa)
-                    viewCallback.setExpandableList(it)
+                    prepareMenuData(it)
                 })
     }
 }

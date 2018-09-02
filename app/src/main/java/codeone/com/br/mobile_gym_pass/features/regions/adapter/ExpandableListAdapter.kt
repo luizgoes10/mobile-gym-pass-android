@@ -31,12 +31,12 @@ class ExpandableListAdapter(context: Context, listDataHeader:List<MenuModel>,
 
         if (convert == null) {
             val infalInflater = this.context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            convert = infalInflater.inflate(R.layout.list_group_child, null)
+          //  convert = infalInflater.inflate(R.layout.list_group_child, null)
         }
 
-        var txtListChild = convert?.findViewById<TextView>(R.id.lblListItem)
+      //  var txtListChild = convert?.findViewById<TextView>(R.id.lblListItem)
 
-        txtListChild?.text = childText
+      //  txtListChild?.text = childText
         return convert
 
     }
@@ -62,12 +62,12 @@ class ExpandableListAdapter(context: Context, listDataHeader:List<MenuModel>,
         var convert = convertView
         if (convertView == null) {
             val infalInflater = this.context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            convert = infalInflater.inflate(R.layout.list_group_header, null)
+         //   convert = infalInflater.inflate(R.layout.list_group_header, null)
         }
 
-        val lblListHeader = convert?.findViewById<TextView>(R.id.lblListHeader)
-        lblListHeader?.setTypeface(null, Typeface.BOLD)
-        lblListHeader?.text = headerTitle
+      //  val lblListHeader = convert?.findViewById<TextView>(R.id.lblListHeader)
+    //    lblListHeader?.setTypeface(null, Typeface.BOLD)
+    //    lblListHeader?.text = headerTitle
 
         return convert!!
     }

@@ -16,27 +16,29 @@ import codeone.com.br.mobile_gym_pass.commons.activity.BaseActivity
 import codeone.com.br.mobile_gym_pass.features.company.adapter.EmpresaAdapter
 import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
 import codeone.com.br.mobile_gym_pass.features.regions.adapter.ExpandableListAdapter
+import codeone.com.br.mobile_gym_pass.features.regions.adapter.ThreeLevelListAdapter
 import codeone.com.br.mobile_gym_pass.features.regions.domain.Regiao
 import codeone.com.br.mobile_gym_pass.features.regions.domain.util.MenuModel
 import codeone.com.br.mobile_gym_pass.features.regions.presenter.MainPresenter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_company.*
+import java.util.ArrayList
+import java.util.LinkedHashMap
 
 
 class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedListener, MainPresenter.ViewCallBack {
 
     private val presenter by lazy {MainPresenter(this)}
     private var adapter:EmpresaAdapter? = null
-    private var expandebleListView:ExpandableListView? = null
-    private var expandableListAdapter: ExpandableListAdapter? = null
+
+    private var expandableListView: ExpandableListView? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -53,41 +55,6 @@ class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedLi
         presenter.onViewCreated()
     }
 
-    override fun setExpandableList(regions: MutableList<Regiao>) {
-        expandebleListView = findViewById(R.id.expandableListView)
-
-        presenter.prepareMenuData(regions)
-    }
-
-
-
-    override fun populateExpandebleList(headerList:List<MenuModel>, childList:HashMap<MenuModel, List<MenuModel>>) {
-
-        expandableListAdapter = ExpandableListAdapter(this, headerList, childList)
-        expandebleListView?.setAdapter(expandableListAdapter)
-
-        expandableListView.setOnGroupClickListener { parent, v, groupPosition, id ->
-            if (headerList[groupPosition].isGroup) {
-                if (!headerList[groupPosition].hasChildren) {
-                    onBackPressed()
-                }
-            }
-
-            false
-        }
-
-        expandableListView.setOnChildClickListener { parent, v, groupPosition, childPosition, id ->
-            if (childList[headerList[groupPosition]] != null) {
-                val model = childList[headerList[groupPosition]]?.get(childPosition)
-                if (model?.url?.length!! > 0) {
-                    onBackPressed()
-                }
-            }
-
-            false
-        }
-
-    }
 
     override fun setUpRecycler() {
         rvCompany.layoutManager = LinearLayoutManager(this)
@@ -145,5 +112,23 @@ class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedLi
         return true
     }
 
+    override fun setUpExpandableListView(parent:Array<String>,secondeLevel:MutableList<Array<String>>,
+                                         data: MutableList<LinkedHashMap<String, Array<String>>>) {
+        expandableListView = findViewById(R.id.expandible_listview) as ExpandableListView
+        //passing three level of information to constructor
+        val threeLevelListAdapterAdapter = ThreeLevelListAdapter(this, parent, secondeLevel, data)
+        expandableListView?.setAdapter(threeLevelListAdapterAdapter)
+        expandableListView?.setOnGroupExpandListener(object : ExpandableListView.OnGroupExpandListener {
+            internal var previousGroup = -1
+
+            override fun onGroupExpand(groupPosition: Int) {
+                if (groupPosition != previousGroup)
+                    expandableListView?.collapseGroup(previousGroup)
+                previousGroup = groupPosition
+            }
+        })
+
+
+    }
 
 }
