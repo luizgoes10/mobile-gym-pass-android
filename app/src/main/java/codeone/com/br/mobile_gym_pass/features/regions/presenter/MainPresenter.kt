@@ -105,7 +105,7 @@ open class MainPresenter(val viewCallback: ViewCallBack, val lifecycleOwner: Lif
             regions[1].estado[3].localizacao[i].nmLocalizacao
         })
 
-        des8 = Array(regions[1].estado[4].localizacao.size, {i ->
+    /*    des8 = Array(regions[1].estado[4].localizacao.size, {i ->
             regions[1].estado[4].localizacao[i].nmLocalizacao
         })
         des9 = Array(regions[1].estado[5].localizacao.size,{ i ->
@@ -116,7 +116,7 @@ open class MainPresenter(val viewCallback: ViewCallBack, val lifecycleOwner: Lif
         })
         des11 = Array(regions[1].estado[7].localizacao.size, { i ->
             regions[1].estado[7].localizacao[i].nmLocalizacao
-        })
+        })*/
 
         secondLevel.add(q1)
         secondLevel.add(q2)
@@ -130,10 +130,10 @@ open class MainPresenter(val viewCallback: ViewCallBack, val lifecycleOwner: Lif
         thirdLevelq2.put(q2[1], des5)
         thirdLevelq2.put(q2[2], des6)
         thirdLevelq2.put(q2[3], des7)
-        thirdLevelq2.put(q2[4], des8)
+     /*   thirdLevelq2.put(q2[4], des8)
         thirdLevelq2.put(q2[5], des9)
         thirdLevelq2.put(q2[6], des10)
-        thirdLevelq2.put(q2[7], des11)
+        thirdLevelq2.put(q2[7], des11)*/
 
 
          /*  thirdLevelq3.put(q3[2], des5)
