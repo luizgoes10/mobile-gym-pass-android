@@ -93,16 +93,29 @@ open class MainPresenter(val viewCallback: ViewCallBack, val lifecycleOwner: Lif
             regions[1].estado[0].localizacao[i].nmLocalizacao
         })
 
-        des4 = Array(regions[1].estado[1].localizacao.size, { i ->
+        des5 = Array(regions[1].estado[1].localizacao.size, { i ->
             regions[1].estado[1].localizacao[i].nmLocalizacao
         })
 
-        des5 = Array(regions[1].estado[2].localizacao.size, { i ->
+        des6 = Array(regions[1].estado[2].localizacao.size, { i ->
             regions[1].estado[2].localizacao[i].nmLocalizacao
         })
 
-        des6 = Array(regions[1].estado[3].localizacao.size, { i ->
+        des7 = Array(regions[1].estado[3].localizacao.size, { i ->
             regions[1].estado[3].localizacao[i].nmLocalizacao
+        })
+
+        des8 = Array(regions[1].estado[4].localizacao.size, {i ->
+            regions[1].estado[4].localizacao[i].nmLocalizacao
+        })
+        des9 = Array(regions[1].estado[5].localizacao.size,{ i ->
+            regions[1].estado[5].localizacao[i].nmLocalizacao
+        })
+        des10 = Array(regions[1].estado[6].localizacao.size,{ i ->
+            regions[1].estado[6].localizacao[i].nmLocalizacao
+        })
+        des11 = Array(regions[1].estado[7].localizacao.size, { i ->
+            regions[1].estado[7].localizacao[i].nmLocalizacao
         })
 
         secondLevel.add(q1)
@@ -113,12 +126,21 @@ open class MainPresenter(val viewCallback: ViewCallBack, val lifecycleOwner: Lif
         thirdLevelq1.put(q1[0], des1)
         thirdLevelq1.put(q1[1], des2)
         thirdLevelq1.put(q1[2], des3)
-      /*  thirdLevelq2.put(q2[1], des4)
-        thirdLevelq3.put(q3[2], des5)
-        thirdLevelq3.put(q3[1], des6)*/
-        data.add(thirdLevelq1)
-        data.add(thirdLevelq2)
-        data.add(thirdLevelq3)
+        thirdLevelq2.put(q2[0], des4)
+        thirdLevelq2.put(q2[1], des5)
+        thirdLevelq2.put(q2[2], des6)
+        thirdLevelq2.put(q2[3], des7)
+        thirdLevelq2.put(q2[4], des8)
+        thirdLevelq2.put(q2[5], des9)
+        thirdLevelq2.put(q2[6], des10)
+        thirdLevelq2.put(q2[7], des11)
+
+
+         /*  thirdLevelq3.put(q3[2], des5)
+           thirdLevelq3.put(q3[1], des6)*/
+           data.add(thirdLevelq1)
+           data.add(thirdLevelq2)
+           data.add(thirdLevelq3)
 
         viewCallback.setUpExpandableListView(parent, secondLevel, data)
     }
