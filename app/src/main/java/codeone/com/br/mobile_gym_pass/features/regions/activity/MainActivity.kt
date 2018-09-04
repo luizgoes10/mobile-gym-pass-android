@@ -11,8 +11,11 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ExpandableListView
+import android.widget.TextView
 import codeone.com.br.mobile_gym_pass.R
 import codeone.com.br.mobile_gym_pass.commons.activity.BaseActivity
+import codeone.com.br.mobile_gym_pass.commons.util.onClick
+import codeone.com.br.mobile_gym_pass.commons.util.toast
 import codeone.com.br.mobile_gym_pass.features.company.adapter.EmpresaAdapter
 import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
 import codeone.com.br.mobile_gym_pass.features.regions.adapter.ExpandableListAdapter
@@ -23,8 +26,13 @@ import codeone.com.br.mobile_gym_pass.features.regions.presenter.MainPresenter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_company.*
+import kotlinx.android.synthetic.main.row_third.*
 import java.util.ArrayList
 import java.util.LinkedHashMap
+import android.support.v4.app.NotificationCompat.getGroup
+import android.content.ClipData.Item
+
+
 
 
 class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedListener, MainPresenter.ViewCallBack {
@@ -52,7 +60,9 @@ class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedLi
 
         nav_view.setNavigationItemSelectedListener(this)
 
+
         presenter.onViewCreated()
+
     }
 
 
@@ -103,8 +113,8 @@ class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedLi
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
-         /*   R.id.nav_region -> {
-
+         /*   R.id.rowThirdText -> {
+              toast("ok")
             }*/
         }
 
@@ -125,10 +135,12 @@ class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedLi
                 if (groupPosition != previousGroup)
                     expandableListView?.collapseGroup(previousGroup)
                 previousGroup = groupPosition
+
             }
+
         })
 
-
     }
+
 
 }

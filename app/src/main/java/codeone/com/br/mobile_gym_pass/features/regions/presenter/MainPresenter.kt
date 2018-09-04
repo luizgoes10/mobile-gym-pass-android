@@ -19,6 +19,7 @@ open class MainPresenter(val viewCallback: ViewCallBack, val lifecycleOwner: Lif
         fun setAllCompany(company:MutableList<Empresa>)
         fun setUpExpandableListView(parent:Array<String>,secondeLevel:MutableList<Array<String>>,
                                     data: MutableList<LinkedHashMap<String, Array<String>>>)
+
     }
 
     private var parent:Array<String> = arrayOf()//"What is View?", "What is  Layout?", "What is Dynamic Views?"
@@ -45,10 +46,22 @@ open class MainPresenter(val viewCallback: ViewCallBack, val lifecycleOwner: Lif
     internal var des16:Array<String> = arrayOf()
     internal var des17:Array<String> = arrayOf()
     internal var des18:Array<String> = arrayOf()
+    internal var des19:Array<String> = arrayOf()
+    internal var des20:Array<String> = arrayOf()
+    internal var des21:Array<String> = arrayOf()
+    internal var des22:Array<String> = arrayOf()
+    internal var des23:Array<String> = arrayOf()
+    internal var des24:Array<String> = arrayOf()
+    internal var des25:Array<String> = arrayOf()
+    internal var des26:Array<String> = arrayOf()
+    internal var des27:Array<String> = arrayOf()
 
     internal var thirdLevelq1 = LinkedHashMap<String, Array<String>>()
     internal var thirdLevelq2 = LinkedHashMap<String, Array<String>>()
     internal var thirdLevelq3 = LinkedHashMap<String, Array<String>>()
+
+    internal var thirdLevelq4 = LinkedHashMap<String, Array<String>>()
+    internal var thirdLevelq5 = LinkedHashMap<String, Array<String>>()
     /**
      * Second level array list
      */
@@ -105,42 +118,118 @@ open class MainPresenter(val viewCallback: ViewCallBack, val lifecycleOwner: Lif
             regions[1].estado[3].localizacao[i].nmLocalizacao
         })
 
-    /*    des8 = Array(regions[1].estado[4].localizacao.size, {i ->
-            regions[1].estado[4].localizacao[i].nmLocalizacao
+
+        des8 = Array(regions[2].estado[0].localizacao.size, {i ->
+            regions[2].estado[0].localizacao[i].nmLocalizacao
         })
-        des9 = Array(regions[1].estado[5].localizacao.size,{ i ->
-            regions[1].estado[5].localizacao[i].nmLocalizacao
+        des9 = Array(regions[2].estado[1].localizacao.size,{ i ->
+            regions[2].estado[1].localizacao[i].nmLocalizacao
         })
-        des10 = Array(regions[1].estado[6].localizacao.size,{ i ->
-            regions[1].estado[6].localizacao[i].nmLocalizacao
+        des10 = Array(regions[2].estado[2].localizacao.size,{ i ->
+            regions[2].estado[2].localizacao[i].nmLocalizacao
         })
-        des11 = Array(regions[1].estado[7].localizacao.size, { i ->
-            regions[1].estado[7].localizacao[i].nmLocalizacao
-        })*/
+        des11 = Array(regions[2].estado[3].localizacao.size, { i ->
+            regions[2].estado[3].localizacao[i].nmLocalizacao
+        })
+
+        des12 = Array(regions[2].estado[4].localizacao.size, {i ->
+            regions[2].estado[4].localizacao[i].nmLocalizacao
+        })
+        des13 = Array(regions[2].estado[5].localizacao.size,{ i ->
+            regions[2].estado[5].localizacao[i].nmLocalizacao
+        })
+        des14 = Array(regions[2].estado[6].localizacao.size,{ i ->
+            regions[2].estado[6].localizacao[i].nmLocalizacao
+        })
+        des15 = Array(regions[2].estado[7].localizacao.size, { i ->
+            regions[2].estado[7].localizacao[i].nmLocalizacao
+        })
+
+        des16 = Array(regions[2].estado[8].localizacao.size, { i ->
+            regions[2].estado[8].localizacao[i].nmLocalizacao
+        })
+
+        des17 = Array(regions[3].estado[0].localizacao.size, { i ->
+            regions[3].estado[0].localizacao[i].nmLocalizacao
+        })
+
+        des18 = Array(regions[3].estado[1].localizacao.size, { i ->
+            regions[3].estado[1].localizacao[i].nmLocalizacao
+        })
+        des19 = Array(regions[3].estado[2].localizacao.size, { i ->
+            regions[3].estado[2].localizacao[i].nmLocalizacao
+        })
+        des20 = Array(regions[3].estado[3].localizacao.size, { i ->
+            regions[3].estado[3].localizacao[i].nmLocalizacao
+        })
+
+        des21 = Array(regions[4].estado[0].localizacao.size, { i ->
+            regions[4].estado[0].localizacao[i].nmLocalizacao
+        })
+        des22 = Array(regions[4].estado[1].localizacao.size, { i ->
+            regions[4].estado[1].localizacao[i].nmLocalizacao
+        })
+        des23 = Array(regions[4].estado[2].localizacao.size, { i ->
+            regions[4].estado[2].localizacao[i].nmLocalizacao
+        })
+        des24 = Array(regions[4].estado[3].localizacao.size, { i ->
+            regions[4].estado[3].localizacao[i].nmLocalizacao
+        })
+        des25 = Array(regions[4].estado[4].localizacao.size, { i ->
+            regions[4].estado[4].localizacao[i].nmLocalizacao
+        })
+        des26 = Array(regions[4].estado[5].localizacao.size, { i ->
+            regions[4].estado[5].localizacao[i].nmLocalizacao
+        })
+
+        des27 = Array(regions[4].estado[6].localizacao.size, { i ->
+            regions[4].estado[6].localizacao[i].nmLocalizacao
+        })
+
 
         secondLevel.add(q1)
         secondLevel.add(q2)
         secondLevel.add(q3)
         secondLevel.add(q4)
         secondLevel.add(q5)
+//sul
         thirdLevelq1.put(q1[0], des1)
         thirdLevelq1.put(q1[1], des2)
         thirdLevelq1.put(q1[2], des3)
+//sudeste
         thirdLevelq2.put(q2[0], des4)
         thirdLevelq2.put(q2[1], des5)
         thirdLevelq2.put(q2[2], des6)
         thirdLevelq2.put(q2[3], des7)
-     /*   thirdLevelq2.put(q2[4], des8)
-        thirdLevelq2.put(q2[5], des9)
-        thirdLevelq2.put(q2[6], des10)
-        thirdLevelq2.put(q2[7], des11)*/
+//nordeste
+        thirdLevelq3.put(q3[0], des8)
+        thirdLevelq3.put(q3[1], des9)
+        thirdLevelq3.put(q3[2], des10)
+        thirdLevelq3.put(q3[3], des11)
+        thirdLevelq3.put(q3[4], des12)
+        thirdLevelq3.put(q3[5], des13)
+        thirdLevelq3.put(q3[6], des14)
+        thirdLevelq3.put(q3[7], des15)
+        thirdLevelq3.put(q3[8], des16)
+//centro-oeste
+        thirdLevelq4.put(q4[0], des17)
+        thirdLevelq4.put(q4[1], des18)
+        thirdLevelq4.put(q4[2], des19)
+        thirdLevelq4.put(q4[3], des20)
+//norte
+        thirdLevelq5.put(q5[0], des21)
+        thirdLevelq5.put(q5[1], des22)
+        thirdLevelq5.put(q5[2], des23)
+        thirdLevelq5.put(q5[3], des24)
+        thirdLevelq5.put(q5[4], des25)
+        thirdLevelq5.put(q5[5], des26)
+        thirdLevelq5.put(q5[6], des27)
 
-
-         /*  thirdLevelq3.put(q3[2], des5)
-           thirdLevelq3.put(q3[1], des6)*/
-           data.add(thirdLevelq1)
-           data.add(thirdLevelq2)
-           data.add(thirdLevelq3)
+        data.add(thirdLevelq1)
+        data.add(thirdLevelq2)
+        data.add(thirdLevelq3)
+        data.add(thirdLevelq4)
+        data.add(thirdLevelq5)
 
         viewCallback.setUpExpandableListView(parent, secondLevel, data)
     }
