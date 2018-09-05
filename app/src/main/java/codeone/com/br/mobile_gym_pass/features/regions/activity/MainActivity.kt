@@ -30,7 +30,6 @@ class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedLi
 
     private var expandableListView: ExpandableListView? = null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -60,6 +59,7 @@ class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedLi
     }
 
     override fun setAllCompany(company: MutableList<Empresa>) {
+
 
         rvCompany.visibility = View.VISIBLE
         if(adapter == null){

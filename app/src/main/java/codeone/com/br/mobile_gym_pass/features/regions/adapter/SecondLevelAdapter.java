@@ -15,17 +15,21 @@
 package codeone.com.br.mobile_gym_pass.features.regions.adapter;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import codeone.com.br.mobile_gym_pass.R;
+import codeone.com.br.mobile_gym_pass.features.company.adapter.EmpresaAdapter;
+import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa;
+import codeone.com.br.mobile_gym_pass.features.regions.activity.MainActivity;
 
 
 public class SecondLevelAdapter extends BaseExpandableListAdapter {
@@ -106,7 +110,17 @@ public class SecondLevelAdapter extends BaseExpandableListAdapter {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "ok",Toast.LENGTH_SHORT).show();
+
+
+                MainActivity main = (MainActivity) context;
+                RecyclerView view = (RecyclerView) main.findViewById(R.id.rvCompany);
+                EmpresaAdapter adapter = (EmpresaAdapter) view.getAdapter();
+                List<Empresa> emp = (List<Empresa>) adapter.getEmpresa();
+                List<Empresa> emp1 = new ArrayList<>();
+                emp1.add(emp.get(0));
+                adapter.setList(emp1);
+                view.setAdapter(adapter);
+                adapter.setContext(context);
             }
         });
 
