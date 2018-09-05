@@ -21,6 +21,7 @@ import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -101,6 +102,13 @@ public class SecondLevelAdapter extends BaseExpandableListAdapter {
         String text = childArray[childPosition];
 
         textView.setText(text);
+
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "ok",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return convertView;
     }

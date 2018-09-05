@@ -29,6 +29,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import codeone.com.br.mobile_gym_pass.R;
+import kotlin.Unit;
 
 public class ThreeLevelListAdapter extends BaseExpandableListAdapter {
 
@@ -36,6 +37,7 @@ public class ThreeLevelListAdapter extends BaseExpandableListAdapter {
     List<String[]> secondLevel;
     private Context context;
     List<LinkedHashMap<String, String[]>> data;
+    Unit onClick;
 
     /**
      * Constructor
@@ -43,8 +45,10 @@ public class ThreeLevelListAdapter extends BaseExpandableListAdapter {
      * @param parentHeader
      * @param secondLevel
      * @param data
+
      */
-    public ThreeLevelListAdapter(Context context, String[] parentHeader, List<String[]> secondLevel, List<LinkedHashMap<String, String[]>> data) {
+    public ThreeLevelListAdapter(Context context, String[] parentHeader, List<String[]> secondLevel, List<LinkedHashMap<String,
+            String[]>> data) {
         this.context = context;
 
         this.parentHeaders = parentHeader;
@@ -52,6 +56,7 @@ public class ThreeLevelListAdapter extends BaseExpandableListAdapter {
         this.secondLevel = secondLevel;
 
         this.data = data;
+
     }
 
     @Override
