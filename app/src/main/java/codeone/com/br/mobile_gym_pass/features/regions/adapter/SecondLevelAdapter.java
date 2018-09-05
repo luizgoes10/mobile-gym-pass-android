@@ -105,19 +105,28 @@ public class SecondLevelAdapter extends BaseExpandableListAdapter {
 
         String text = childArray[childPosition];
 
-        textView.setText(text);
+        final Integer idLocalizacao = Integer.parseInt(text.substring(0, 3));
+
+        String aux = text.substring(6, text.length());
+
+        textView.setText(aux);
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
+                List<Empresa> emp1 = new ArrayList<>();
                 MainActivity main = (MainActivity) context;
                 RecyclerView view = (RecyclerView) main.findViewById(R.id.rvCompany);
                 EmpresaAdapter adapter = (EmpresaAdapter) view.getAdapter();
                 List<Empresa> emp = (List<Empresa>) adapter.getEmpresa();
-                List<Empresa> emp1 = new ArrayList<>();
-                emp1.add(emp.get(0));
+                for (Empresa e: emp) {
+                    if(e.getIdLocalizacao()==idLocalizacao){
+
+                        emp1.add(e);
+                    }
+                }
                 adapter.setList(emp1);
                 view.setAdapter(adapter);
                 adapter.setContext(context);
