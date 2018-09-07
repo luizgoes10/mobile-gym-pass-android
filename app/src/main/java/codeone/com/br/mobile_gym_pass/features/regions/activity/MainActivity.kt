@@ -1,6 +1,7 @@
 package codeone.com.br.mobile_gym_pass.features.regions.activity
 
 import android.os.Bundle
+import android.os.Handler
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
@@ -13,6 +14,8 @@ import android.view.View
 import android.widget.ExpandableListView
 import codeone.com.br.mobile_gym_pass.R
 import codeone.com.br.mobile_gym_pass.commons.activity.BaseActivity
+import codeone.com.br.mobile_gym_pass.commons.util.alert
+import codeone.com.br.mobile_gym_pass.commons.util.toast
 import codeone.com.br.mobile_gym_pass.features.company.adapter.EmpresaAdapter
 import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
 import codeone.com.br.mobile_gym_pass.features.regions.adapter.ThreeLevelListAdapter
@@ -21,11 +24,16 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_company.*
 import java.util.LinkedHashMap
+import android.widget.Toast
+import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener
+import codeone.com.br.mobile_gym_pass.R.id.srCompany
+
+
 
 
 class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedListener, MainPresenter.ViewCallBack {
 
-    private val presenter by lazy {MainPresenter(this)}
+    open val presenter by lazy {MainPresenter(this)}
     private var adapter:EmpresaAdapter? = null
 
     private var expandableListView: ExpandableListView? = null
@@ -56,6 +64,31 @@ class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedLi
     override fun setUpRecycler() {
         rvCompany.layoutManager = LinearLayoutManager(this)
         rvCompany.itemAnimator = DefaultItemAnimator()
+    }
+
+    override fun setUpProgress(show:Boolean) {
+        if(show)
+           pbRecyclerCompany.visibility = View.VISIBLE
+        else{
+            pbRecyclerCompany.visibility = View.GONE
+        }
+    }
+
+    override fun setUpAlertDialog(message: String) {
+
+        alert("Houve um erro",message)
+
+    }
+
+    override fun setUpSwipe() {
+        srCompany.setOnRefreshListener {
+            // Your code here
+            // To keep animation for 4 seconds
+            Handler().postDelayed(Runnable {
+                // Stop animation (This will be after 3 seconds)
+                srCompany.setRefreshing(false)
+            }, 4000) // Delay in millis
+        }
     }
 
     override fun setAllCompany(company: MutableList<Empresa>) {
@@ -129,5 +162,6 @@ class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedLi
         })
 
     }
+
 
 }

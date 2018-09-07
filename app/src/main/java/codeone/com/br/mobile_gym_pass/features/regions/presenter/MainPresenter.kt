@@ -16,6 +16,9 @@ open class MainPresenter(val viewCallback: ViewCallBack, val lifecycleOwner: Lif
     interface ViewCallBack{
 
         fun setUpRecycler()
+        fun setUpProgress(show:Boolean)
+        fun setUpSwipe()
+        fun setUpAlertDialog(message:String)
         fun setAllCompany(company:MutableList<Empresa>)
         fun setUpExpandableListView(parent:Array<String>,secondeLevel:MutableList<Array<String>>,
                                     data: MutableList<LinkedHashMap<String, Array<String>>>)
@@ -285,9 +288,36 @@ open class MainPresenter(val viewCallback: ViewCallBack, val lifecycleOwner: Lif
                     if(it.isEmpty()){
                         return@subscribeBy
                     }
-
+                    //Curitiba e região
+                    viewCallback.setUpProgress(true)
                     viewCallback.setAllCompany(it[0].estado[0].localizacao[0].empresa)
                     prepareMenuData(it)
-                })
+                    viewCallback.setUpSwipe()
+                },onComplete = {
+                    viewCallback.setUpProgress(false)
+                },onError = {
+                    viewCallback.setUpProgress(true)
+                    viewCallback.setUpAlertDialog(it.message!!)
+                }
+                        )
+    }
+    open fun taskCompanyByIdLocation(id:Int){
+        Observable.fromCallable { AllObjectService.getCompanyByIdLocation(id) }
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeBy(onNext = {
+                    if(it.isEmpty()){
+                        return@subscribeBy
+                    }
+                    viewCallback.setUpProgress(true)
+                    viewCallback.setAllCompany(it)
+                    viewCallback.setUpSwipe()
+                },onComplete = {
+                    viewCallback.setUpProgress(false)
+                },onError = {
+                    viewCallback.setUpProgress(true)
+                    viewCallback.setUpAlertDialog(it.message!!)
+                }
+                )
     }
 }

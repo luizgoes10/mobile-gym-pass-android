@@ -30,6 +30,8 @@ import codeone.com.br.mobile_gym_pass.R;
 import codeone.com.br.mobile_gym_pass.features.company.adapter.EmpresaAdapter;
 import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa;
 import codeone.com.br.mobile_gym_pass.features.regions.activity.MainActivity;
+import codeone.com.br.mobile_gym_pass.features.regions.presenter.MainPresenter;
+import codeone.com.br.mobile_gym_pass.features.regions.service.AllObjectService;
 
 
 public class SecondLevelAdapter extends BaseExpandableListAdapter {
@@ -105,7 +107,7 @@ public class SecondLevelAdapter extends BaseExpandableListAdapter {
 
         String text = childArray[childPosition];
 
-        final Integer idLocalizacao = Integer.parseInt(text.substring(0, 3));
+        final Integer id = Integer.parseInt(text.substring(0, 3));
 
         String aux = text.substring(6, text.length());
 
@@ -114,22 +116,9 @@ public class SecondLevelAdapter extends BaseExpandableListAdapter {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-                List<Empresa> emp1 = new ArrayList<>();
                 MainActivity main = (MainActivity) context;
-                RecyclerView view = (RecyclerView) main.findViewById(R.id.rvCompany);
-                EmpresaAdapter adapter = (EmpresaAdapter) view.getAdapter();
-                List<Empresa> emp = (List<Empresa>) adapter.getEmpresa();
-                for (Empresa e: emp) {
-                    if(e.getIdLocalizacao()==idLocalizacao){
-
-                        emp1.add(e);
-                    }
-                }
-                adapter.setList(emp1);
-                view.setAdapter(adapter);
-                adapter.setContext(context);
+                main.onBackPressed();
+                main.getPresenter().taskCompanyByIdLocation(id);
             }
         });
 

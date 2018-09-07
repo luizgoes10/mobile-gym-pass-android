@@ -5,6 +5,7 @@ import android.support.annotation.IdRes
 import android.support.annotation.StringRes
 import android.support.v4.app.Fragment
 import android.support.v7.app.ActionBar
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.util.Log
@@ -24,6 +25,9 @@ fun Activity.toast(message: CharSequence, length: Int = Toast.LENGTH_SHORT) =
 fun Activity.toast(@StringRes message: Int, length: Int = Toast.LENGTH_SHORT) =
         Toast.makeText(this, message, length).show()
 
+fun Activity.alert(title: String, message:String) =
+        AlertDialog.Builder(this).setMessage(message).setTitle(title)
+                .setPositiveButton("OK"){ dialog, which ->  }.show()
 // Configura a Toolbar
 fun AppCompatActivity.setupToolbar(@IdRes id: Int, title: String? = null, upNavigation: Boolean = false): ActionBar {
     val toolbar = findViewById<Toolbar>(id)
