@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".features.company.activity.CompanyActivity">
 
+
+      <include layout="@layout/include_toolbar"/>
+
+    <FrameLayout
+        android:id="@+id/frameEmpresa"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
 </android.support.constraint.ConstraintLayout>

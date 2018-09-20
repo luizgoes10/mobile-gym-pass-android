@@ -36,7 +36,7 @@ fun AppCompatActivity.setupToolbar(@IdRes id: Int, title: String? = null, upNavi
         supportActionBar?.title = title;
     }
     supportActionBar?.setDisplayHomeAsUpEnabled(upNavigation)
-    Log.d("carros", "Up nav config em $upNavigation $supportActionBar")
+    Log.d("empresas", "Up nav config em $upNavigation $supportActionBar")
     return supportActionBar!!
 }
 

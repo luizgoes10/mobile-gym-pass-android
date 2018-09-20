@@ -24,11 +24,10 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_company.*
 import java.util.LinkedHashMap
-import android.widget.Toast
-import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener
-import codeone.com.br.mobile_gym_pass.R.id.srCompany
-
-
+import codeone.com.br.mobile_gym_pass.commons.util.setupToolbar
+import codeone.com.br.mobile_gym_pass.features.company.activity.CompanyActivity
+import kotlinx.android.synthetic.main.include_toolbar.*
+import org.jetbrains.anko.startActivity
 
 
 class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedListener, MainPresenter.ViewCallBack {
@@ -41,7 +40,7 @@ class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedLi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+        setupToolbar(R.id.myToolbar)
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -49,7 +48,7 @@ class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedLi
         }
 
         val toggle = ActionBarDrawerToggle(
-                this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+                this, drawer_layout, myToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
@@ -105,7 +104,7 @@ class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedLi
     }
 
     private fun onClickItem():(Empresa) -> Unit = {
-        company ->  null
+        startActivity<CompanyActivity>("empresa" to it)
     }
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {

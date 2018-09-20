@@ -12,7 +12,9 @@ import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
 import java.util.LinkedHashMap
 
-open class MainPresenter(val viewCallback: ViewCallBack, val lifecycleOwner: LifecycleOwner = viewCallback as LifecycleOwner):BasePresenter(lifecycleOwner) {
+open class MainPresenter(val viewCallback: ViewCallBack,
+                         val lifecycleOwner: LifecycleOwner = viewCallback as LifecycleOwner)
+    :BasePresenter(lifecycleOwner) {
     interface ViewCallBack{
 
         fun setUpRecycler()

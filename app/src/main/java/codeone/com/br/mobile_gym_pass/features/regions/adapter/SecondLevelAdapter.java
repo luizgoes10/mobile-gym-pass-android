@@ -107,7 +107,16 @@ public class SecondLevelAdapter extends BaseExpandableListAdapter {
 
         String text = childArray[childPosition];
 
-        final Integer id = Integer.parseInt(text.substring(0, 3));
+        char[] caracteres = text.toCharArray();
+
+        StringBuffer sb = new StringBuffer();
+
+        for(Character character: caracteres){
+            if(Character.isDigit(character))
+                sb.append(character);
+        }
+
+        final Integer id = Integer.parseInt(sb.toString());
 
         String aux = text.substring(6, text.length());
 
