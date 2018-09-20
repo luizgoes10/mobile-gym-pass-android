@@ -3,6 +3,7 @@ package codeone.com.br.mobile_gym_pass.features.company.activity
 import android.os.Bundle
 import codeone.com.br.mobile_gym_pass.R
 import codeone.com.br.mobile_gym_pass.commons.activity.BaseActivity
+import codeone.com.br.mobile_gym_pass.commons.util.addFragment
 import codeone.com.br.mobile_gym_pass.commons.util.setupToolbar
 import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
 import codeone.com.br.mobile_gym_pass.features.company.fragment.CompanyFragment
@@ -23,13 +24,11 @@ class CompanyActivity : BaseActivity() {
 
         if(savedInstanceState == null){
 
-            val transaction = supportFragmentManager.beginTransaction()
-
             val frag = UniqueCompanyFragment()
 
             frag.arguments = intent.extras
 
-            transaction.replace(R.id.frameEmpresa, frag).commit()
+            addFragment(R.id.frameEmpresa, frag)
         }
 
 
