@@ -8,10 +8,13 @@ import codeone.com.br.mobile_gym_pass.commons.util.setupToolbar
 import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
 import codeone.com.br.mobile_gym_pass.features.company.fragment.CompanyFragment
 import codeone.com.br.mobile_gym_pass.features.company.fragment.UniqueCompanyFragment
+import codeone.com.br.mobile_gym_pass.features.company.presenter.CompanyPresenter
 
-class CompanyActivity : BaseActivity() {
+class CompanyActivity : BaseActivity(), CompanyPresenter.ViewCallBack {
 
     private lateinit var company:Empresa
+
+    private val presenter by lazy { CompanyPresenter(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +25,16 @@ class CompanyActivity : BaseActivity() {
 
         setupToolbar(R.id.myToolbar, company.nmEmpresa, upNavigation = true)
 
-        if(savedInstanceState == null){
+        presenter.onViewCreated(savedInstanceState)
+
+    }
+
+    override fun setUpProgress() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun setUpFragments(bundle: Bundle?) {
+        if(bundle == null){
 
             val frag = UniqueCompanyFragment()
 
@@ -30,7 +42,5 @@ class CompanyActivity : BaseActivity() {
 
             addFragment(R.id.frameEmpresa, frag)
         }
-
-
     }
 }
