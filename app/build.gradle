@@ -33,11 +33,15 @@ android {
             dimension 'environment'
             applicationIdSuffix ".dev"
             buildConfigField "String", "BASE_URL", '"https://api-gym-pass.azurewebsites.net/"'
+            buildConfigField "String", "GEOCODE_URL", '"https://maps.google.com/maps/api/geocode/"'
+            buildConfigField "String", "API_KEY", '"AIzaSyAsP9TU1c0QKTKWEoplPyqIOnZhoMGgx70"'
         }
         homol {
             dimension 'environment'
             applicationIdSuffix ".homolog"
             buildConfigField "String", "BASE_URL", '"https://api-gym-pass.azurewebsites.net/"'
+            buildConfigField "String", "GEOCODE_URL", '"https://maps.google.com/maps/api/geocode/"'
+            buildConfigField "String", "API_KEY", '"AIzaSyAsP9TU1c0QKTKWEoplPyqIOnZhoMGgx70"'
         }
 
     }
@@ -75,4 +79,7 @@ dependencies {
 
     //Lifecycle
     kapt "android.arch.lifecycle:compiler:1.1.0"
+
+    implementation 'com.google.android.gms:play-services-maps:15.0.+'
+    implementation 'com.google.android.gms:play-services-location:15.0.+'
 }

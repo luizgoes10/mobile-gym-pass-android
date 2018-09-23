@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import codeone.com.br.mobile_gym_pass.R
 import codeone.com.br.mobile_gym_pass.commons.fragment.BaseFragment
+import codeone.com.br.mobile_gym_pass.commons.util.loadUrl
 import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
 import kotlinx.android.synthetic.main.fragment_unique_company.*
 
@@ -30,6 +31,12 @@ class UniqueCompanyFragment : BaseFragment() {
         company = arguments?.getParcelable("empresa") as Empresa
 
         tvnmEmpresa.text = company.nmEmpresa
+
+        tvnmAddr.text = company.addrEndereco
+
+        tvnmTel.text = company.telTelefone
+
+        imgEmpresa.loadUrl(company.imgLogo, pbFragmentEmpresa)
     }
 
 }

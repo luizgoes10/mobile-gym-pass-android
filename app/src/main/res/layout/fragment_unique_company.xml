@@ -1,15 +1,56 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:orientation="vertical"
     tools:context="codeone.com.br.mobile_gym_pass.features.company.fragment.UniqueCompanyFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgEmpresa"
+            android:layout_width="120dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <ProgressBar
+            android:id="@+id/pbFragmentEmpresa"
+            style="@android:style/Widget.ProgressBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_vertical"
+            android:visibility="invisible"/>
+
+
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
     <TextView
         android:id="@+id/tvnmEmpresa"
-        android:layout_marginTop="100dp"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:textSize="20sp"
         android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/tvnmAddr"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/hello_blank_fragment"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvnmTel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/hello_blank_fragment"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

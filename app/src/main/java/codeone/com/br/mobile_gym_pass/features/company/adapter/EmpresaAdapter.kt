@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import codeone.com.br.mobile_gym_pass.R
+import codeone.com.br.mobile_gym_pass.commons.util.loadUrl
 import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
 import com.squareup.picasso.Picasso
 
@@ -53,9 +54,10 @@ class EmpresaAdapter(var context:Context, var empresa:List<Empresa>, val onClick
         holder.ttelTel.text = empresa.telTelefone
         holder.tvlrMinPreco.text = empresa.vlrMinPreco.toString()
         holder.tvlrMaxPreco.text = empresa.vlrMaxPreco.toString()
-        holder.progressBarAdapeter.visibility = View.VISIBLE
+
+     //   holder.progressBarAdapeter.visibility = View.VISIBLE
         if(empresa.imgLogo != null){
-            Picasso.with(context).load(empresa.imgLogo).fit().into(holder.photo,
+          /*  Picasso.with(context).load(empresa.imgLogo).fit().into(holder.photo,
                     object : com.squareup.picasso.Callback{
                         override fun onSuccess() {
                             holder.progressBarAdapeter.visibility = View.GONE
@@ -64,7 +66,9 @@ class EmpresaAdapter(var context:Context, var empresa:List<Empresa>, val onClick
                         override fun onError() {
                             holder.progressBarAdapeter.visibility = View.GONE
                         }
-                    })
+                    })*/
+            holder.photo.loadUrl(empresa.imgLogo, holder.progressBarAdapeter)
+
         }else{
             holder.photo.visibility = View.INVISIBLE
             holder.progressBarAdapeter.visibility = View.GONE

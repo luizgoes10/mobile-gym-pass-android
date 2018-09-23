@@ -20,7 +20,6 @@ class CompanyActivity : BaseActivity(), CompanyPresenter.ViewCallBack {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
 
-
         company = intent.getParcelableExtra<Empresa>("empresa")
 
         setupToolbar(R.id.myToolbar, company.nmEmpresa, upNavigation = true)
