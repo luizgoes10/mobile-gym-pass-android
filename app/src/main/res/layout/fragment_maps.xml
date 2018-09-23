@@ -5,7 +5,7 @@
     tools:context="codeone.com.br.mobile_gym_pass.commons.fragment.MapsFragment">
 
     <fragment
-        android:id="@+id/fragments_maps"
+        android:id="@+id/fragment_maps"
         class="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

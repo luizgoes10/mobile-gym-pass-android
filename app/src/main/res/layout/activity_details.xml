@@ -20,7 +20,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frameMaps"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="100dp"
+        tools:layout="@layout/fragment_maps"/>
 
 
 </android.support.constraint.ConstraintLayout>

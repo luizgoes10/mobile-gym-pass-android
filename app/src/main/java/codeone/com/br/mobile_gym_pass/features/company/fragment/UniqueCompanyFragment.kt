@@ -37,6 +37,7 @@ class UniqueCompanyFragment : BaseFragment() {
         tvnmTel.text = company.telTelefone
 
         imgEmpresa.loadUrl(company.imgLogo, pbFragmentEmpresa)
+
     }
 
 }

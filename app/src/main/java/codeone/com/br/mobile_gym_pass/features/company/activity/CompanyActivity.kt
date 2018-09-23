@@ -1,8 +1,11 @@
 package codeone.com.br.mobile_gym_pass.features.company.activity
 
+import android.content.Intent
 import android.os.Bundle
 import codeone.com.br.mobile_gym_pass.R
 import codeone.com.br.mobile_gym_pass.commons.activity.BaseActivity
+import codeone.com.br.mobile_gym_pass.commons.domain.Geocode
+import codeone.com.br.mobile_gym_pass.commons.fragment.MapsFragment
 import codeone.com.br.mobile_gym_pass.commons.util.addFragment
 import codeone.com.br.mobile_gym_pass.commons.util.setupToolbar
 import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
@@ -24,7 +27,7 @@ class CompanyActivity : BaseActivity(), CompanyPresenter.ViewCallBack {
 
         setupToolbar(R.id.myToolbar, company.nmEmpresa, upNavigation = true)
 
-        presenter.onViewCreated(savedInstanceState)
+        presenter.onViewCreated(savedInstanceState, company.addrEndereco)
 
     }
 
@@ -33,13 +36,18 @@ class CompanyActivity : BaseActivity(), CompanyPresenter.ViewCallBack {
     }
 
     override fun setUpFragments(bundle: Bundle?) {
+
         if(bundle == null){
-
             val frag = UniqueCompanyFragment()
-
             frag.arguments = intent.extras
-
             addFragment(R.id.frameEmpresa, frag)
         }
+
+    }
+
+    override fun setUpMapsFragment(bundle: Bundle) {
+        val fragMaps = MapsFragment()
+        fragMaps.arguments = bundle
+        supportFragmentManager.beginTransaction().replace(R.id.frameMaps, fragMaps).commit()
     }
 }

@@ -22,13 +22,26 @@ class MapsService {
     companion object Factory {
         @Throws
         fun getGeocodeLocation(address: String, key: String? = null):Geocode{
-            val service = createRetrofitService<RetrofitMapsService>(WebService.BASE_URL)
-            val execute = service.getGeocodeLocation(address,WebService.API_KEY).execute()
+            var aux = address.split("-|,|\\s+".toRegex())
+            var aux1 = arrayListOf<String>()
+            var newAddr = ""
+            aux.forEach {
+                if(!it.isEmpty()){
+                    aux1.add(it)
+                }
+            }
+
+            aux1.forEach {
+                newAddr += it + "+"
+            }
+
+            val service = createRetrofitService<RetrofitMapsService>(WebService.GEOCODE_URL)
+            val execute = service.getGeocodeLocation(newAddr,WebService.API_KEY).execute()
             val responseVO = execute.body()
             responseVO?.let {
                 return it
             }
-            throw Exception("Houve um erro")
+            throw Throwable("Houve um erro")
         }
     }
 }
