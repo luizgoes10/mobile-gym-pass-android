@@ -55,18 +55,8 @@ class EmpresaAdapter(var context:Context, var empresa:List<Empresa>, val onClick
         holder.tvlrMinPreco.text = empresa.vlrMinPreco.toString()
         holder.tvlrMaxPreco.text = empresa.vlrMaxPreco.toString()
 
-     //   holder.progressBarAdapeter.visibility = View.VISIBLE
         if(empresa.imgLogo != null){
-          /*  Picasso.with(context).load(empresa.imgLogo).fit().into(holder.photo,
-                    object : com.squareup.picasso.Callback{
-                        override fun onSuccess() {
-                            holder.progressBarAdapeter.visibility = View.GONE
-                        }
 
-                        override fun onError() {
-                            holder.progressBarAdapeter.visibility = View.GONE
-                        }
-                    })*/
             holder.photo.loadUrl(empresa.imgLogo, holder.progressBarAdapeter)
 
         }else{

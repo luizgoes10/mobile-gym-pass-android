@@ -9,6 +9,7 @@ import codeone.com.br.mobile_gym_pass.commons.fragment.MapsFragment
 import codeone.com.br.mobile_gym_pass.commons.util.addFragment
 import codeone.com.br.mobile_gym_pass.commons.util.setupToolbar
 import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
+import codeone.com.br.mobile_gym_pass.features.company.fragment.BoxesFragment
 import codeone.com.br.mobile_gym_pass.features.company.fragment.CompanyFragment
 import codeone.com.br.mobile_gym_pass.features.company.fragment.UniqueCompanyFragment
 import codeone.com.br.mobile_gym_pass.features.company.presenter.CompanyPresenter
@@ -39,8 +40,11 @@ class CompanyActivity : BaseActivity(), CompanyPresenter.ViewCallBack {
 
         if(bundle == null){
             val frag = UniqueCompanyFragment()
+            val fragBox = BoxesFragment()
+            fragBox.arguments = intent.extras
             frag.arguments = intent.extras
             addFragment(R.id.frameEmpresa, frag)
+            addFragment(R.id.frameBoxes, fragBox)
         }
 
     }

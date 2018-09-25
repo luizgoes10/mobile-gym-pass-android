@@ -1,8 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="8dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context="codeone.com.br.mobile_gym_pass.features.company.fragment.UniqueCompanyFragment">
 
@@ -12,9 +11,9 @@
 
         <ImageView
             android:id="@+id/imgEmpresa"
-            android:layout_width="120dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_width="100dp"
+            android:layout_height="110dp"
+            android:layout_gravity="top"/>
 
         <ProgressBar
             android:id="@+id/pbFragmentEmpresa"
@@ -26,30 +25,32 @@
 
 
     </FrameLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-    <TextView
-        android:id="@+id/tvnmEmpresa"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:textSize="20sp"
-        android:text="@string/hello_blank_fragment" />
+
+        <TextView
+            android:id="@+id/tvnmEmpresa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="@string/hello_blank_fragment" />
 
         <TextView
             android:id="@+id/tvnmAddr"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/hello_blank_fragment"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/tvnmTel"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/hello_blank_fragment"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
     </LinearLayout>
 
