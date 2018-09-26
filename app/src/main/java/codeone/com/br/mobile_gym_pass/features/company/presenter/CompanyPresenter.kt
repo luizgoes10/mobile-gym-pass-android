@@ -6,8 +6,6 @@ import codeone.com.br.mobile_gym_pass.commons.domain.Geocode
 import codeone.com.br.mobile_gym_pass.commons.presenter.BasePresenter
 import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
 import codeone.com.br.mobile_gym_pass.features.company.service.MapsService
-import codeone.com.br.mobile_gym_pass.features.regions.domain.Box
-import codeone.com.br.mobile_gym_pass.features.regions.presenter.MainPresenter
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.subscribeBy

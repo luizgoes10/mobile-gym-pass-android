@@ -1,4 +1,4 @@
-package codeone.com.br.mobile_gym_pass.features.regions.domain
+package codeone.com.br.mobile_gym_pass.features.periodo.domain
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

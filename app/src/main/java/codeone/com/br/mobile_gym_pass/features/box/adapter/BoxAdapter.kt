@@ -1,4 +1,4 @@
-package codeone.com.br.mobile_gym_pass.features.company.adapter
+package codeone.com.br.mobile_gym_pass.features.box.adapter
 
 import android.content.Context
 import android.support.v7.widget.CardView
@@ -11,8 +11,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import codeone.com.br.mobile_gym_pass.R
 import codeone.com.br.mobile_gym_pass.commons.util.loadUrl
-import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
-import codeone.com.br.mobile_gym_pass.features.regions.domain.Box
+import codeone.com.br.mobile_gym_pass.features.box.domain.Box
 
 class BoxAdapter(var context: Context?, var box:List<Box>, val onClick:(Box)->Unit):
         RecyclerView.Adapter<BoxAdapter.BoxViewHolder>() {

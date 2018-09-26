@@ -1,22 +1,15 @@
 package codeone.com.br.mobile_gym_pass.features.company.activity
 
-import android.content.Intent
 import android.os.Bundle
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
-import android.view.View
 import codeone.com.br.mobile_gym_pass.R
 import codeone.com.br.mobile_gym_pass.commons.activity.BaseActivity
 import codeone.com.br.mobile_gym_pass.commons.fragment.MapsFragment
 import codeone.com.br.mobile_gym_pass.commons.util.addFragment
 import codeone.com.br.mobile_gym_pass.commons.util.setupToolbar
-import codeone.com.br.mobile_gym_pass.features.company.adapter.BoxAdapter
 import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
-import codeone.com.br.mobile_gym_pass.features.company.fragment.BoxesFragment
+import codeone.com.br.mobile_gym_pass.features.box.fragment.BoxesFragment
 import codeone.com.br.mobile_gym_pass.features.company.fragment.UniqueCompanyFragment
 import codeone.com.br.mobile_gym_pass.features.company.presenter.CompanyPresenter
-import codeone.com.br.mobile_gym_pass.features.regions.domain.Box
-import kotlinx.android.synthetic.main.fragment_boxes.*
 
 class CompanyActivity : BaseActivity(), CompanyPresenter.ViewCallBack {
 
