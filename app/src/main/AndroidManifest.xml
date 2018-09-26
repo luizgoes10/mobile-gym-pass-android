@@ -62,7 +62,7 @@
             android:name=".features.company.activity.CompanyActivity"
             android:parentActivityName=".features.regions.activity.MainActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".features.box.activity.BoxActivity"
+        <activity android:name=".features.box.activity.BoxUniqueActivity"
             android:screenOrientation="portrait"
             android:parentActivityName=".features.regions.activity.MainActivity"></activity>
     </application>

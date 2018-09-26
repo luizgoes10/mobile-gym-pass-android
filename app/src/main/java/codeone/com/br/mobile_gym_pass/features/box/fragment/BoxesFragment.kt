@@ -10,7 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import codeone.com.br.mobile_gym_pass.R
 import codeone.com.br.mobile_gym_pass.commons.fragment.BaseFragment
-import codeone.com.br.mobile_gym_pass.features.box.activity.BoxActivity
+import codeone.com.br.mobile_gym_pass.features.box.activity.BoxUniqueActivity
 import codeone.com.br.mobile_gym_pass.features.box.adapter.BoxAdapter
 import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
 import codeone.com.br.mobile_gym_pass.features.box.presenter.BoxPresenter
@@ -67,7 +67,7 @@ class BoxesFragment : BaseFragment(), BoxPresenter.ViewCallBack {
     }
 
     private fun onClickItem():(Box) -> Unit ={
-        activity?.startActivity<BoxActivity>("box" to it)
+        activity?.startActivity<BoxUniqueActivity>("box" to it)
     }
 
 }
