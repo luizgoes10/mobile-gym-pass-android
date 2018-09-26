@@ -4,7 +4,6 @@ import android.arch.lifecycle.LifecycleOwner
 import codeone.com.br.mobile_gym_pass.commons.presenter.BasePresenter
 import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
 import codeone.com.br.mobile_gym_pass.features.regions.domain.Regiao
-import codeone.com.br.mobile_gym_pass.features.regions.domain.util.MenuModel
 import codeone.com.br.mobile_gym_pass.features.regions.service.AllObjectService
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
