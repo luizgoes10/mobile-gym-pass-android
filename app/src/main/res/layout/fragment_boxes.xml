@@ -1,15 +1,10 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="codeone.com.br.mobile_gym_pass.features.company.fragment.BoxesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <View
-        android:layout_width="match_parent"
-        android:background="#ccc"
-        android:layout_height="1dp"/>
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/srBox"
@@ -19,7 +14,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:cacheColorHint="@android:color/transparent"
             android:clipToPadding="false"
             android:divider="@null"
@@ -39,4 +34,4 @@
         android:visibility="invisible"/>
     <!--   android:indeterminateTint="@color/colorStatusBar" -->
 
-</LinearLayout>
+</FrameLayout>

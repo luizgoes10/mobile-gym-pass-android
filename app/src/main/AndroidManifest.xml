@@ -48,7 +48,8 @@
         <activity
             android:name=".features.regions.activity.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NavDrawer">
+            android:theme="@style/AppTheme.NavDrawer"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -56,6 +57,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".features.company.activity.CompanyActivity"
+            android:screenOrientation="portrait"
             android:parentActivityName=".features.regions.activity.MainActivity"></activity>
     </application>
 
