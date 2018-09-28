@@ -49,7 +49,7 @@ open class ImagemBoxAdapter(var context: Context?, var imagemBox:List<ImagemBox>
         holder.itemView.setOnClickListener { onClick(imagemBox) }
     }
 
-    fun setList(imagemBoxes:MutableList<ImagemBox>){
+    fun setList(imagemBoxes:List<ImagemBox>){
         imagemBox = imagemBoxes
     }
 }

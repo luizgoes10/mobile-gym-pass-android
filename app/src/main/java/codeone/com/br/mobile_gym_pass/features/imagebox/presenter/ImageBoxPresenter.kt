@@ -12,7 +12,7 @@ open class ImageBoxPresenter(val viewCallBack:ImageBoxPresenter.ViewCallBack,
 
         fun setUpRecycler()
         fun setUpProgress(show:Boolean)
-        fun setUpAllImages(image:MutableList<ImagemBox>)
+        fun setUpAllImages(image:List<ImagemBox>)
     }
 
     open fun onViewCreated(box:Box){

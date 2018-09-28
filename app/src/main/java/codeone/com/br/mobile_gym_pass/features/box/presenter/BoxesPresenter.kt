@@ -12,7 +12,7 @@ open class BoxesPresenter(val viewCallBack: ViewCallBack,
 
         fun setUpRecycler()
         fun setUpProgress(show:Boolean)
-        fun setUpAllBox(box:MutableList<Box>)
+        fun setUpAllBox(box:List<Box>)
     }
     open fun onViewCreated(empresa: Empresa){
 

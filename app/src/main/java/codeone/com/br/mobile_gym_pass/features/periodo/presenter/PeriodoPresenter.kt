@@ -13,7 +13,7 @@ open class PeriodoPresenter(val viewCallBack: PeriodoPresenter.ViewCallBack,
 
         fun setUpRecycler()
         fun setUpProgress(show:Boolean)
-        fun setUpAllPeriodo(periodo:MutableList<Periodo>)
+        fun setUpAllPeriodo(periodo:List<Periodo>)
 
     }
 

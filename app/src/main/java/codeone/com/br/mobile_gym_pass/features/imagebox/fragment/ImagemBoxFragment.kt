@@ -36,7 +36,7 @@ class ImagemBoxFragment : BaseFragment(),ImageBoxPresenter.ViewCallBack {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        box = arguments?.getParcelable("box") as Box
+        box = arguments!!.getParcelable<Box>("box")
         presenter.onViewCreated(box)
     }
 
@@ -54,7 +54,7 @@ class ImagemBoxFragment : BaseFragment(),ImageBoxPresenter.ViewCallBack {
         }
     }
 
-    override fun setUpAllImages(imagem: MutableList<ImagemBox>) {
+    override fun setUpAllImages(imagem: List<ImagemBox>) {
         rvImageBox.visibility = View.VISIBLE
         if(adapter == null){
             adapter = ImagemBoxAdapter(context, imagem, onClickItem())

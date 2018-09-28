@@ -40,7 +40,7 @@ class BoxFragment : BaseFragment(),BoxPresenter.ViewCallBack {
         imgFoto.loadUrl(box.imgFoto, pbFragmentBox)
         tNmBox.text = box.nmBox
         tTxtAmbiente.text = box.txtAmbiente
-        tTxtInfo.text = box.txtInfo
+       // tTxtInfo.text = box.txtInfo
         tNmInfoImportante.text = box.nmInfoImportante
     }
 

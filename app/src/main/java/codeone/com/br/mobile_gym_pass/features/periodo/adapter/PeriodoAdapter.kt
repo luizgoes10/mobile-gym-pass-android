@@ -42,7 +42,7 @@ class PeriodoAdapter(var context: Context?, var periodo:List<Periodo>, val onCli
         holder.itemView.setOnClickListener { onClick(periodo) }
     }
 
-    fun setList(periodos:MutableList<Periodo>){
+    fun setList(periodos:List<Periodo>){
         periodo = periodos
     }
 }

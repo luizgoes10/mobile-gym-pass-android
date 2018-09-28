@@ -66,7 +66,7 @@ class EmpresaAdapter(var context:Context, var empresa:List<Empresa>, val onClick
         holder.itemView.setOnClickListener { onClick(empresa) }
     }
 
-    fun setList(empresas:MutableList<Empresa>){
+    fun setList(empresas:List<Empresa>){
         empresa = empresas
     }
 }

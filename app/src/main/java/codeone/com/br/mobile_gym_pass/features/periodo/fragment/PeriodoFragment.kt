@@ -53,7 +53,7 @@ class PeriodoFragment : BaseFragment(), PeriodoPresenter.ViewCallBack {
         }
     }
 
-    override fun setUpAllPeriodo(periodo: MutableList<Periodo>) {
+    override fun setUpAllPeriodo(periodo: List<Periodo>) {
         rvPeriodo.visibility = View.VISIBLE
         if(adapter == null){
             adapter = PeriodoAdapter(context, periodo, onClickItem())

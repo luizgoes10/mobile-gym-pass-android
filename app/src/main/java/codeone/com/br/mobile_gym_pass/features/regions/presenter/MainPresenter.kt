@@ -1,5 +1,6 @@
 package codeone.com.br.mobile_gym_pass.features.regions.presenter
 
+import android.annotation.SuppressLint
 import android.arch.lifecycle.LifecycleOwner
 import codeone.com.br.mobile_gym_pass.commons.presenter.BasePresenter
 import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
@@ -20,7 +21,7 @@ open class MainPresenter(val viewCallback: ViewCallBack,
         fun setUpProgress(show:Boolean)
         fun setUpSwipe()
         fun setUpAlertDialog(message:String)
-        fun setAllCompany(company:MutableList<Empresa>)
+        fun setAllCompany(company:List<Empresa>)
         fun setUpExpandableListView(parent:Array<String>,secondeLevel:MutableList<Array<String>>,
                                     data: MutableList<LinkedHashMap<String, Array<String>>>)
 
@@ -280,6 +281,7 @@ open class MainPresenter(val viewCallback: ViewCallBack,
 
         viewCallback.setUpExpandableListView(parent, secondLevel, data)
     }
+    @SuppressLint("CheckResult")
     open fun taskRegions(){
 
         Observable.fromCallable{ AllObjectService.getAllRegions() }
@@ -302,6 +304,7 @@ open class MainPresenter(val viewCallback: ViewCallBack,
                 }
                         )
     }
+    @SuppressLint("CheckResult")
     open fun taskCompanyByIdLocation(id:Int){
         Observable.fromCallable { AllObjectService.getCompanyByIdLocation(id) }
                 .subscribeOn(Schedulers.io())

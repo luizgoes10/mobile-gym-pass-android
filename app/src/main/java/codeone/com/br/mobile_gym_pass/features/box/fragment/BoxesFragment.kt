@@ -55,7 +55,7 @@ class BoxesFragment : BaseFragment(), BoxesPresenter.ViewCallBack {
         }
     }
 
-    override fun setUpAllBox(box: MutableList<Box>) {
+    override fun setUpAllBox(box: List<Box>) {
         rvBox.visibility = View.VISIBLE
         if(adapter == null){
             adapter = BoxAdapter(context, box, onClickItem())

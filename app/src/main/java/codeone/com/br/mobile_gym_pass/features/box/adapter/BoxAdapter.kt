@@ -13,7 +13,7 @@ import codeone.com.br.mobile_gym_pass.R
 import codeone.com.br.mobile_gym_pass.commons.util.loadUrl
 import codeone.com.br.mobile_gym_pass.features.box.domain.Box
 
-class BoxAdapter(var context: Context?, var box:List<Box>, val onClick:(Box)->Unit):
+class BoxAdapter(var context: Context?, var box:List<Box>?, val onClick:(Box)->Unit):
         RecyclerView.Adapter<BoxAdapter.BoxViewHolder>() {
 
 
@@ -35,7 +35,7 @@ class BoxAdapter(var context: Context?, var box:List<Box>, val onClick:(Box)->Un
     }
 
     override fun getItemCount(): Int {
-        return box.size
+        return box!!.size
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoxViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_box,parent,false)
@@ -43,7 +43,7 @@ class BoxAdapter(var context: Context?, var box:List<Box>, val onClick:(Box)->Un
     }
     override fun onBindViewHolder(holder: BoxViewHolder, position: Int) {
         val context = holder.itemView.context
-        val box = box[position]
+        val box = box!![position]
         holder.tName.text = box.nmBox
 
         holder.tVer.text = "Ver valores"
@@ -59,7 +59,7 @@ class BoxAdapter(var context: Context?, var box:List<Box>, val onClick:(Box)->Un
         holder.itemView.setOnClickListener { onClick(box) }
     }
 
-    fun setList(boxes:MutableList<Box>){
+    fun setList(boxes:List<Box>){
         box = boxes
     }
 }

@@ -90,7 +90,7 @@ class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedLi
         }
     }
 
-    override fun setAllCompany(company: MutableList<Empresa>) {
+    override fun setAllCompany(company: List<Empresa>) {
 
 
         rvCompany.visibility = View.VISIBLE
