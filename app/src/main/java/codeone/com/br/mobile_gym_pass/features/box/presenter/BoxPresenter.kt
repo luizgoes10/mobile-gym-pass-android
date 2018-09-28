@@ -2,7 +2,6 @@ package codeone.com.br.mobile_gym_pass.features.box.presenter
 
 import android.arch.lifecycle.LifecycleOwner
 import codeone.com.br.mobile_gym_pass.commons.presenter.BasePresenter
-import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
 import codeone.com.br.mobile_gym_pass.features.box.domain.Box
 
 open class BoxPresenter(val viewCallBack: ViewCallBack,
@@ -10,19 +9,11 @@ open class BoxPresenter(val viewCallBack: ViewCallBack,
         BasePresenter(lifecycleOwner) {
     interface ViewCallBack{
 
-        fun setUpRecycler()
-        fun setUpProgress(show:Boolean)
-        fun setUpAllBox(box:MutableList<Box>)
+        fun setUpAttributes()
     }
-    open fun onViewCreated(empresa: Empresa){
 
-        viewCallBack.setUpRecycler()
+    open fun onViewCreated(){
 
-        viewCallBack.setUpProgress(true)
-
-        viewCallBack.setUpAllBox(empresa.box)
-
-        viewCallBack.setUpProgress(false)
-
+        viewCallBack.setUpAttributes()
     }
 }

@@ -13,7 +13,7 @@ import codeone.com.br.mobile_gym_pass.commons.fragment.BaseFragment
 import codeone.com.br.mobile_gym_pass.features.box.activity.BoxActivity
 import codeone.com.br.mobile_gym_pass.features.box.adapter.BoxAdapter
 import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
-import codeone.com.br.mobile_gym_pass.features.box.presenter.BoxPresenter
+import codeone.com.br.mobile_gym_pass.features.box.presenter.BoxesPresenter
 import codeone.com.br.mobile_gym_pass.features.box.domain.Box
 import kotlinx.android.synthetic.main.fragment_boxes.*
 import org.jetbrains.anko.startActivity
@@ -23,11 +23,11 @@ import org.jetbrains.anko.startActivity
  * A simple [Fragment] subclass.
  *
  */
-class BoxesFragment : BaseFragment(), BoxPresenter.ViewCallBack {
+class BoxesFragment : BaseFragment(), BoxesPresenter.ViewCallBack {
 
     private var adapter: BoxAdapter? = null
     private lateinit var empresa: Empresa
-    private val presenter by lazy { BoxPresenter(this) }
+    private val presenter by lazy { BoxesPresenter(this) }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {

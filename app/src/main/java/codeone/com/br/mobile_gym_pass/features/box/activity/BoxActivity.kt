@@ -7,13 +7,14 @@ import codeone.com.br.mobile_gym_pass.commons.util.addFragment
 import codeone.com.br.mobile_gym_pass.commons.util.setupToolbar
 import codeone.com.br.mobile_gym_pass.features.imagebox.fragment.ImagemBoxFragment
 import codeone.com.br.mobile_gym_pass.features.box.domain.Box
-import codeone.com.br.mobile_gym_pass.features.box.presenter.BoxUniquePresenter
+import codeone.com.br.mobile_gym_pass.features.box.fragment.BoxFragment
+import codeone.com.br.mobile_gym_pass.features.box.presenter.BoxActivityPresenter
 import codeone.com.br.mobile_gym_pass.features.periodo.fragment.PeriodoFragment
 
-class BoxActivity : BaseActivity(),BoxUniquePresenter.ViewCallBack {
+class BoxActivity : BaseActivity(),BoxActivityPresenter.ViewCallBack {
 
     private lateinit var box: Box
-    private val presenter by lazy { BoxUniquePresenter(this) }
+    private val presenter by lazy { BoxActivityPresenter(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +27,9 @@ class BoxActivity : BaseActivity(),BoxUniquePresenter.ViewCallBack {
     override fun setUpFragments() {
         val fragPeriodo = PeriodoFragment()
         val fragImageBox = ImagemBoxFragment()
+        val fragBox = BoxFragment()
         addFragment(R.id.framePeriodo, fragPeriodo)
         addFragment(R.id.frameImageBox, fragImageBox)
+        addFragment(R.id.frameBox, fragBox)
     }
 }
