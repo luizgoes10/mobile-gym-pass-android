@@ -1,4 +1,4 @@
-package codeone.com.br.mobile_gym_pass.features.ImageBox.domain
+package codeone.com.br.mobile_gym_pass.features.imagebox.domain
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

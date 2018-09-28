@@ -1,6 +1,7 @@
 package codeone.com.br.mobile_gym_pass.features.box.domain
 
 import android.os.Parcelable
+import codeone.com.br.mobile_gym_pass.features.imagebox.domain.ImagemBox
 import codeone.com.br.mobile_gym_pass.features.periodo.domain.Periodo
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
@@ -30,6 +31,8 @@ data class Box(
         @SerializedName("IdEmpresa")
         var idEmpresa:Int,
         @SerializedName("Periodo")
-        var periodo:MutableList<Periodo>
+        var periodo:MutableList<Periodo>,
+        @SerializedName("ImagemBox")
+        var imageBox:MutableList<ImagemBox>
 ):Parcelable {
 }

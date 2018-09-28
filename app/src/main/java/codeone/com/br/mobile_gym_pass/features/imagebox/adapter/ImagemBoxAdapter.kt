@@ -1,4 +1,4 @@
-package codeone.com.br.mobile_gym_pass.features.ImageBox.adapter
+package codeone.com.br.mobile_gym_pass.features.imagebox.adapter
 
 import android.content.Context
 import android.support.v7.widget.CardView
@@ -8,12 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ProgressBar
-import android.widget.TextView
 import codeone.com.br.mobile_gym_pass.R
 import codeone.com.br.mobile_gym_pass.commons.util.loadUrl
-import codeone.com.br.mobile_gym_pass.features.ImageBox.domain.ImagemBox
-import codeone.com.br.mobile_gym_pass.features.box.adapter.BoxAdapter
-import codeone.com.br.mobile_gym_pass.features.box.domain.Box
+import codeone.com.br.mobile_gym_pass.features.imagebox.domain.ImagemBox
 
 open class ImagemBoxAdapter(var context: Context?, var imagemBox:List<ImagemBox>, val onClick:(ImagemBox)->Unit):
         RecyclerView.Adapter<ImagemBoxAdapter.ImagemBoxViewHolder>() {
