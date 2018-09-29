@@ -38,7 +38,7 @@ class BoxFragment : BaseFragment(),BoxPresenter.ViewCallBack {
 
     override fun setUpAttributes() {
         imgFoto.loadUrl(box.imgFoto, pbFragmentBox)
-        tNmBox.text = box.nmBox
+    //    tNmBox.text = box.nmBox
         tTxtAmbiente.text = box.txtAmbiente
        // tTxtInfo.text = box.txtInfo
         tNmInfoImportante.text = box.nmInfoImportante

@@ -9,6 +9,7 @@ import codeone.com.br.mobile_gym_pass.features.imagebox.fragment.ImagemBoxFragme
 import codeone.com.br.mobile_gym_pass.features.box.domain.Box
 import codeone.com.br.mobile_gym_pass.features.box.fragment.BoxFragment
 import codeone.com.br.mobile_gym_pass.features.box.presenter.BoxActivityPresenter
+import codeone.com.br.mobile_gym_pass.features.imagebox.fragment.NotImgFragment
 import codeone.com.br.mobile_gym_pass.features.periodo.fragment.PeriodoFragment
 
 class BoxActivity : BaseActivity(),BoxActivityPresenter.ViewCallBack {
@@ -26,10 +27,15 @@ class BoxActivity : BaseActivity(),BoxActivityPresenter.ViewCallBack {
 
     override fun setUpFragments() {
         val fragPeriodo = PeriodoFragment()
-        val fragImageBox = ImagemBoxFragment()
         val fragBox = BoxFragment()
         addFragment(R.id.framePeriodo, fragPeriodo)
-        addFragment(R.id.frameImageBox, fragImageBox)
         addFragment(R.id.frameBox, fragBox)
+        if(!box.imageBox.isEmpty()){
+            val fragImageBox = ImagemBoxFragment()
+            addFragment(R.id.frameImageBox, fragImageBox)
+        }else{
+            val fragSemFoto = NotImgFragment()
+            addFragment(R.id.frameImageBox, fragSemFoto)
+        }
     }
 }

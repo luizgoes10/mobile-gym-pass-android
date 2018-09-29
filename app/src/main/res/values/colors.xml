@@ -15,6 +15,7 @@
     <color name="green">#0f0</color>
     <color name="yellow">#fff000</color>
     <color name="gray">#cccccc</color>
+    <color name="azure">#F0FFFF</color>
 
     <!-- SwipeRefreshLayout -->
     <!-- azul -->
