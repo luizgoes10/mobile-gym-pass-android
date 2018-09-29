@@ -47,9 +47,9 @@
 
         <ImageView
             android:id="@+id/imgFoto"
-            android:layout_margin="6dp"
-            android:layout_width="120dp"
-            android:layout_height="150dp"
+            android:layout_margin="3dp"
+            android:layout_width="30dp"
+            android:layout_height="60dp"
             android:layout_gravity="top"/>
 
         <ProgressBar
@@ -83,7 +83,7 @@
             android:background="@color/azure"
             android:layout_margin="6dp"
             android:gravity="start|center_horizontal"
-            android:textSize="13sp"
+            android:textSize="8sp"
             android:text="@string/hello_blank_fragment" />
 
         </android.support.v7.widget.CardView>
@@ -117,7 +117,7 @@
             android:background="@color/azure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13sp"
+            android:textSize="8sp"
             android:gravity="start|center_horizontal"
             android:text="@string/hello_blank_fragment" />
 

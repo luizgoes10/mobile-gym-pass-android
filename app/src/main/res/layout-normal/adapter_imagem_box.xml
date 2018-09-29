@@ -21,17 +21,17 @@
 
     <ImageView
         android:id="@+id/imgAdapterImagemBox"
-        android:layout_width="120dp"
-        android:layout_height="150dp"
+        android:layout_width="30dp"
+        android:layout_height="60dp"
         android:layout_gravity="start"
-        android:layout_margin="6dp" />
+        android:layout_margin="3dp" />
 
     <ProgressBar
         android:id="@+id/pbAdapterImagemBox"
         style="@android:style/Widget.ProgressBar.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="60dp"
+        android:padding="30dp"
         android:visibility="invisible" />
 
 
