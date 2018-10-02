@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view_box"
+    android:layout_margin="6dp"
+    app:cardElevation="6dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true"
+    card_view:cardCornerRadius="2dp"
+    card_view:cardElevation="6dp"
+    android:foreground="?attr/selectableItemBackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tNameBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="20sp" />
+
+
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgBox"
+                android:layout_width="120dp"
+                android:layout_height="150dp"
+                android:layout_gravity="start"
+                android:layout_margin="8dp" />
+
+            <ProgressBar
+                android:id="@+id/pbAdapterBox"
+                style="@android:style/Widget.ProgressBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="60dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/imgVer"
+                android:layout_width="63dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="175dp"
+                android:layout_gravity="bottom"
+                android:src="@mipmap/ic_launcher_foreground_ver" />
+
+            <TextView
+                android:id="@+id/tVer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="218dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="138dp"
+                android:text="@string/hello_word" />
+
+            <ImageView
+                android:id="@+id/imgSeta"
+                android:layout_width="35dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="278dp"
+                android:layout_gravity="bottom"
+                android:src="@mipmap/ic_launcher_foreground_seta_direita_branco" />
+
+
+        </FrameLayout>
+
+
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

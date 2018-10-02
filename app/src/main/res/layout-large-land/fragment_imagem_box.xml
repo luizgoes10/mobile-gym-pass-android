@@ -1,0 +1,35 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="codeone.com.br.mobile_gym_pass.features.imagebox.fragment.ImagemBoxFragment">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/srImageBox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvImageBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:cacheColorHint="@android:color/transparent"
+            android:clipToPadding="false"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:listSelector="@android:color/transparent"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="horizontal"/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <ProgressBar
+        android:id="@+id/pbRecyclerImageBox"
+        style="@android:style/Widget.ProgressBar.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center_vertical"
+        android:visibility="invisible"/>
+    <!--   android:indeterminateTint="@color/colorStatusBar" -->
+
+</FrameLayout>

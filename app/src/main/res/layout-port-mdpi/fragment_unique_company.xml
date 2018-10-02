@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="codeone.com.br.mobile_gym_pass.features.company.fragment.UniqueCompanyFragment">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgEmpresa"
+            android:layout_width="100dp"
+            android:layout_height="110dp"
+            android:layout_gravity="top"/>
+
+        <ProgressBar
+            android:id="@+id/pbFragmentEmpresa"
+            style="@android:style/Widget.ProgressBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_vertical"
+            android:visibility="invisible"/>
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvnmEmpresa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="@string/hello_blank_fragment" />
+
+        <TextView
+            android:id="@+id/tvnmAddr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_blank_fragment"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvnmTel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_blank_fragment"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

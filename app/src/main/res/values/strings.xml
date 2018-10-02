@@ -12,4 +12,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="API_KEY">AIzaSyAsP9TU1c0QKTKWEoplPyqIOnZhoMGgx70</string>
     <string name="sem_foto">https://apigympass.blob.core.windows.net/imgblob/sem_foto.jpg</string>
+    <string name="lorem_ipsum_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut risus metus. Sed vel mauris nec libero tincidunt mattis. Curabitur commodo tellus felis, in condimentum nunc posuere sit amet. Phasellus efficitur cursus odio ac sollicitudin. Sed euismod magna ac eros vestibulum tristique. Sed sit amet nulla accumsan, convallis nulla accumsan, dapibus ex. Proin tincidunt lacus quis felis rutrum, nec pellentesque dui suscipit.</string>
+    <string name="lorem_ipsum_2">Sed mollis dignissim consectetur. Duis sed augue tincidunt, luctus lorem ut, condimentum elit. Sed tempus ornare odio, ut dapibus leo sodales sit amet. Nullam libero enim, congue at blandit nec, vehicula a lectus. Suspendisse a purus nec orci molestie lacinia. Duis laoreet nulla ut arcu posuere, et sollicitudin lectus consectetur. Suspendisse nec quam in purus suscipit ullamcorper. Mauris non tortor egestas tellus vestibulum volutpat. Fusce ac cursus urna. Cras elementum fermentum felis, et bibendum est ultrices a. Ut non tortor ornare, finibus tellus a, pharetra felis.</string>
 </resources>

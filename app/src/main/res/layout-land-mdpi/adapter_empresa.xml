@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view_company"
+    android:layout_margin="6dp"
+    app:cardElevation="6dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true"
+    card_view:cardCornerRadius="2dp"
+    card_view:cardElevation="6dp"
+    android:foreground="?attr/selectableItemBackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="20sp"/>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_margin="8dp"
+                android:layout_width="120dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <ProgressBar
+                android:id="@+id/pbAdapterCompany"
+                style="@android:style/Widget.ProgressBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_vertical"
+                android:visibility="invisible"/>
+
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/taddrEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/ttelTel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/tvlrMinPreco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/tvlrMaxPreco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="20sp"/>
+
+     <!--   <TextView
+            android:id="@+id/tRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="15sp"/>
+
+        <RatingBar
+            android:id="@+id/rbRatingMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:scaleX=".7"
+            android:scaleY=".7"
+            android:transformPivotX="0dp"
+            android:transformPivotY="0dp"
+            android:max="5"/> -->
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
