@@ -37,10 +37,19 @@ class BoxFragment : BaseFragment(),BoxPresenter.ViewCallBack {
     }
 
     override fun setUpAttributes() {
-        imgFoto.loadUrl(box.imgFoto, pbFragmentBox)
+    //    imgFoto.loadUrl(box.imgFoto, pbFragmentBox)
     //    tNmBox.text = box.nmBox
-        tTxtAmbiente.text = box.txtAmbiente
+        if(box.descricao.isEmpty()){
+            tTxtAmbiente.text = box.txtAmbiente
+        }
+        else{
+           box.descricao.forEach {
+               tTxtAmbiente.text = tTxtAmbiente.text.toString().plus( "» " + it.nmDescricao+"\n")
+            }
+        }
+
        // tTxtInfo.text = box.txtInfo
+        var t = box.nmInfoImportante.split(",")
         tNmInfoImportante.text = box.nmInfoImportante
     }
 
