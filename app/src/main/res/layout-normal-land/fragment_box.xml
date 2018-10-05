@@ -1,112 +1,41 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="codeone.com.br.mobile_gym_pass.features.box.fragment.BoxFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-  <!--  <android.support.v7.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:card_view="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <android.support.v7.widget.CardView
         app:cardElevation="6dp"
         app:cardPreventCornerOverlap="false"
-        app:cardUseCompatPadding="false"
-        card_view:cardCornerRadius="2dp"
-        card_view:cardElevation="6dp"
+        app:cardUseCompatPadding="true"
+        tools:cardCornerRadius="2dp"
+        tools:cardElevation="6dp"
         android:foreground="?attr/selectableItemBackground"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-    <TextView
-        android:id="@+id/tNmBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="@string/hello_blank_fragment" />
-
-    </android.support.v7.widget.CardView>-->
-
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <android.support.v7.widget.CardView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:card_view="http://schemas.android.com/tools"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            app:cardElevation="6dp"
-            app:cardPreventCornerOverlap="false"
-            app:cardUseCompatPadding="true"
-            card_view:cardCornerRadius="2dp"
-            card_view:cardElevation="6dp"
-            android:foreground="?attr/selectableItemBackground"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/imgFoto"
-            android:layout_margin="6dp"
-            android:layout_width="120dp"
-            android:layout_height="150dp"
-            android:layout_gravity="top"/>
-
-        <ProgressBar
-            android:id="@+id/pbFragmentBox"
-            style="@android:style/Widget.ProgressBar.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|center_vertical"
-            android:visibility="invisible"/>
-
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:card_view="http://schemas.android.com/tools"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_marginLeft="150dp"
-            app:cardElevation="6dp"
-            app:cardPreventCornerOverlap="false"
-            app:cardUseCompatPadding="true"
-            card_view:cardCornerRadius="2dp"
-            card_view:cardElevation="6dp"
-            android:foreground="?attr/selectableItemBackground"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/tTxtAmbiente"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/azure"
             android:layout_margin="6dp"
             android:gravity="start|center_horizontal"
-            android:textSize="13sp"
-            android:text="@string/hello_blank_fragment" />
+            android:textSize="13sp"/>
 
-        </android.support.v7.widget.CardView>
+    </android.support.v7.widget.CardView>
 
 
-    </FrameLayout>
-
-  <!--  <TextView
-        android:id="@+id/tTxtInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment" /> -->
 
     <android.support.v7.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:card_view="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_marginTop="6dp"
         app:cardElevation="6dp"
         app:cardPreventCornerOverlap="false"
         app:cardUseCompatPadding="true"
-        card_view:cardCornerRadius="2dp"
-        card_view:cardElevation="6dp"
+        tools:cardCornerRadius="2dp"
+        tools:cardElevation="6dp"
         android:foreground="?attr/selectableItemBackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
