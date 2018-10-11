@@ -2,9 +2,9 @@ package codeone.com.br.mobile_gym_pass.features.box.fragment
 
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +16,9 @@ import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
 import codeone.com.br.mobile_gym_pass.features.box.presenter.BoxesPresenter
 import codeone.com.br.mobile_gym_pass.features.box.domain.Box
 import kotlinx.android.synthetic.main.fragment_boxes.*
+import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.uiThread
 
 
 /**
@@ -42,8 +44,8 @@ class BoxesFragment : BaseFragment(), BoxesPresenter.ViewCallBack {
     }
 
     override fun setUpRecycler() {
-        rvBox.layoutManager = LinearLayoutManager(context)
-        rvBox.itemAnimator = DefaultItemAnimator()
+        rvBox.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(context)
+        rvBox.itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
     }
 
     override fun setUpProgress(show:Boolean) {

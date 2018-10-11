@@ -1,8 +1,8 @@
 package codeone.com.br.mobile_gym_pass.features.periodo.adapter
 
 import android.content.Context
-import android.support.v7.widget.CardView
-import android.support.v7.widget.RecyclerView
+import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,17 +11,17 @@ import codeone.com.br.mobile_gym_pass.R
 import codeone.com.br.mobile_gym_pass.features.periodo.domain.Periodo
 
 class PeriodoAdapter(var context: Context?, var periodo:List<Periodo>, val onClick:(Periodo)->Unit):
-        RecyclerView.Adapter<PeriodoAdapter.PeriodoViewHolder>() {
+        androidx.recyclerview.widget.RecyclerView.Adapter<PeriodoAdapter.PeriodoViewHolder>() {
 
 
-    class PeriodoViewHolder(view: View): RecyclerView.ViewHolder(view){
+    class PeriodoViewHolder(view: View): androidx.recyclerview.widget.RecyclerView.ViewHolder(view){
         var tNamePeriodo: TextView
         var tValor: TextView
-        var cardView: CardView
+        var cardView: androidx.cardview.widget.CardView
         init{
             tNamePeriodo = view.findViewById<TextView>(R.id.tNamePeriodo)
             tValor = view.findViewById<TextView>(R.id.tValor)
-            cardView = view.findViewById<CardView>(R.id.card_view_periodo)
+            cardView = view.findViewById<androidx.cardview.widget.CardView>(R.id.card_view_periodo)
         }
     }
 

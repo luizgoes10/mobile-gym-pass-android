@@ -1,8 +1,8 @@
 package codeone.com.br.mobile_gym_pass.features.company.adapter
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.CardView
+import androidx.recyclerview.widget.RecyclerView
+import androidx.cardview.widget.CardView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,13 +12,12 @@ import android.widget.TextView
 import codeone.com.br.mobile_gym_pass.R
 import codeone.com.br.mobile_gym_pass.commons.util.loadUrl
 import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
-import com.squareup.picasso.Picasso
 
 class EmpresaAdapter(var context:Context, var empresa:List<Empresa>, val onClick:(Empresa)->Unit):
-        RecyclerView.Adapter<EmpresaAdapter.EmpresaViewHolder>() {
+        androidx.recyclerview.widget.RecyclerView.Adapter<EmpresaAdapter.EmpresaViewHolder>() {
 
 
-    class EmpresaViewHolder(view:View):RecyclerView.ViewHolder(view){
+    class EmpresaViewHolder(view:View): androidx.recyclerview.widget.RecyclerView.ViewHolder(view){
         var tName:TextView
         var taddrEnd:TextView
         var ttelTel:TextView
@@ -26,7 +25,7 @@ class EmpresaAdapter(var context:Context, var empresa:List<Empresa>, val onClick
         var tvlrMaxPreco:TextView
         var photo:ImageView
         var progressBarAdapeter:ProgressBar
-        var cardView:CardView
+        var cardView: androidx.cardview.widget.CardView
         init{
             tName = view.findViewById<TextView>(R.id.tName)
             taddrEnd = view.findViewById<TextView>(R.id.taddrEnd)
@@ -35,7 +34,7 @@ class EmpresaAdapter(var context:Context, var empresa:List<Empresa>, val onClick
             tvlrMaxPreco = view.findViewById<TextView>(R.id.tvlrMaxPreco)
             photo = view.findViewById<ImageView>(R.id.img)
             progressBarAdapeter = view.findViewById<ProgressBar>(R.id.pbAdapterCompany)
-            cardView = view.findViewById<CardView>(R.id.card_view_company)
+            cardView = view.findViewById<androidx.cardview.widget.CardView>(R.id.card_view_company)
         }
     }
 

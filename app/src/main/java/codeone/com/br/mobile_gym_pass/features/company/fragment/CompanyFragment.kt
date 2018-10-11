@@ -1,18 +1,14 @@
 package codeone.com.br.mobile_gym_pass.features.company.fragment
 
 
-import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.RecyclerView
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import codeone.com.br.mobile_gym_pass.R
 import codeone.com.br.mobile_gym_pass.commons.fragment.BaseFragment
-import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
-import org.jetbrains.anko.support.v4.find
-
 
 
 /**

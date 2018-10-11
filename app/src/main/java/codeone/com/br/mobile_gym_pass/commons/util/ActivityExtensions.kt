@@ -1,14 +1,14 @@
 package codeone.com.br.mobile_gym_pass.commons.util
 
 import android.app.Activity
-import android.support.annotation.IdRes
-import android.support.annotation.StringRes
-import android.support.v4.app.Fragment
-import android.support.v7.app.ActionBar
-import android.support.v7.app.AlertDialog
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
 import android.util.Log
+import androidx.annotation.IdRes
+import androidx.annotation.StringRes
+import androidx.fragment.app.Fragment
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import android.view.View
 import android.widget.Toast
 
@@ -41,7 +41,7 @@ fun AppCompatActivity.setupToolbar(@IdRes id: Int, title: String? = null, upNavi
 }
 
 // Adiciona o fragment no layout
-fun AppCompatActivity.addFragment(@IdRes layoutId: Int, fragment: Fragment) {
+fun AppCompatActivity.addFragment(@IdRes layoutId: Int, fragment: androidx.fragment.app.Fragment) {
     fragment.arguments = intent.extras
     val ft = supportFragmentManager.beginTransaction()
     ft.add(layoutId, fragment)

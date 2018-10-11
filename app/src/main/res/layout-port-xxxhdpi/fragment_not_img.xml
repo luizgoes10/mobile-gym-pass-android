@@ -7,7 +7,7 @@
     tools:context="codeone.com.br.mobile_gym_pass.features.imagebox.fragment.NotImgFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/card_view_imagem_box_sem_foto"
         android:layout_marginLeft="@dimen/nav_header_height"
@@ -43,6 +43,6 @@
 
         </FrameLayout>
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 </FrameLayout>

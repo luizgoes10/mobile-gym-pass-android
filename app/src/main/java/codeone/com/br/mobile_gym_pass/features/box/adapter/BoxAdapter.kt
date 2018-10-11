@@ -1,8 +1,8 @@
 package codeone.com.br.mobile_gym_pass.features.box.adapter
 
 import android.content.Context
-import android.support.v7.widget.CardView
-import android.support.v7.widget.RecyclerView
+import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,23 +14,23 @@ import codeone.com.br.mobile_gym_pass.commons.util.loadUrl
 import codeone.com.br.mobile_gym_pass.features.box.domain.Box
 
 class BoxAdapter(var context: Context?, var box:List<Box>?, val onClick:(Box)->Unit):
-        RecyclerView.Adapter<BoxAdapter.BoxViewHolder>() {
+        androidx.recyclerview.widget.RecyclerView.Adapter<BoxAdapter.BoxViewHolder>() {
 
 
-    class BoxViewHolder(view: View): RecyclerView.ViewHolder(view){
+    class BoxViewHolder(view: View): androidx.recyclerview.widget.RecyclerView.ViewHolder(view){
         var tName: TextView
         var tVer: TextView
         var photo: ImageView
         var imgVer:ImageView
         var progressBarAdapeterBox: ProgressBar
-        var cardView: CardView
+        var cardView: androidx.cardview.widget.CardView
         init{
             tName = view.findViewById<TextView>(R.id.tNameBox)
             tVer = view.findViewById<TextView>(R.id.tVer)
             photo = view.findViewById<ImageView>(R.id.imgBox)
             imgVer = view.findViewById<ImageView>(R.id.imgVer)
             progressBarAdapeterBox = view.findViewById<ProgressBar>(R.id.pbAdapterBox)
-            cardView = view.findViewById<CardView>(R.id.card_view_box)
+            cardView = view.findViewById<androidx.cardview.widget.CardView>(R.id.card_view_box)
         }
     }
 

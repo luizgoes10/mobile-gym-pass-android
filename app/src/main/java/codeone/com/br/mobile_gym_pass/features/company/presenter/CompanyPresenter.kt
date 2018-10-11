@@ -1,6 +1,6 @@
 package codeone.com.br.mobile_gym_pass.features.company.presenter
 
-import android.arch.lifecycle.LifecycleOwner
+import androidx.lifecycle.LifecycleOwner
 import android.os.Bundle
 import codeone.com.br.mobile_gym_pass.commons.domain.Geocode
 import codeone.com.br.mobile_gym_pass.commons.presenter.BasePresenter

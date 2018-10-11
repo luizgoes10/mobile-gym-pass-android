@@ -1,6 +1,6 @@
 package codeone.com.br.mobile_gym_pass.features.box.presenter
 
-import android.arch.lifecycle.LifecycleOwner
+import androidx.lifecycle.LifecycleOwner
 import codeone.com.br.mobile_gym_pass.commons.presenter.BasePresenter
 
 open class BoxActivityPresenter(val viewCallBack: BoxActivityPresenter.ViewCallBack,

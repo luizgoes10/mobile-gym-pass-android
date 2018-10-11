@@ -2,7 +2,7 @@ package codeone.com.br.mobile_gym_pass.commons.fragment
 
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +20,7 @@ import com.google.android.gms.maps.model.MarkerOptions
  * A simple [Fragment] subclass.
  *
  */
-class MapsFragment : Fragment(), OnMapReadyCallback {
+class MapsFragment : androidx.fragment.app.Fragment(), OnMapReadyCallback {
 
     private var map:GoogleMap? = null
     private var geocode:Geocode? = null

@@ -1,8 +1,8 @@
 package codeone.com.br.mobile_gym_pass.features.imagebox.adapter
 
 import android.content.Context
-import android.support.v7.widget.CardView
-import android.support.v7.widget.RecyclerView
+import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,17 +13,17 @@ import codeone.com.br.mobile_gym_pass.commons.util.loadUrl
 import codeone.com.br.mobile_gym_pass.features.imagebox.domain.ImagemBox
 
 open class ImagemBoxAdapter(var context: Context?, var imagemBox:List<ImagemBox>, val onClick:(ImagemBox)->Unit):
-        RecyclerView.Adapter<ImagemBoxAdapter.ImagemBoxViewHolder>() {
+        androidx.recyclerview.widget.RecyclerView.Adapter<ImagemBoxAdapter.ImagemBoxViewHolder>() {
 
 
-    class ImagemBoxViewHolder(view: View): RecyclerView.ViewHolder(view){
+    class ImagemBoxViewHolder(view: View): androidx.recyclerview.widget.RecyclerView.ViewHolder(view){
         var photo: ImageView
         var progressBarAdapeterBox: ProgressBar
-        var cardView: CardView
+        var cardView: androidx.cardview.widget.CardView
         init{
             photo = view.findViewById<ImageView>(R.id.imgAdapterImagemBox)
             progressBarAdapeterBox = view.findViewById<ProgressBar>(R.id.pbAdapterImagemBox)
-            cardView = view.findViewById<CardView>(R.id.card_view_imagem_box)
+            cardView = view.findViewById<androidx.cardview.widget.CardView>(R.id.card_view_imagem_box)
         }
     }
 

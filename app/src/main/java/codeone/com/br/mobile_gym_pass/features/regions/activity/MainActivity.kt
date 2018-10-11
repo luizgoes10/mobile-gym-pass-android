@@ -2,12 +2,12 @@ package codeone.com.br.mobile_gym_pass.features.regions.activity
 
 import android.os.Bundle
 import android.os.Handler
-import android.support.design.widget.Snackbar
-import android.support.design.widget.NavigationView
-import android.support.v4.view.GravityCompat
-import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.navigation.NavigationView
+import androidx.core.view.GravityCompat
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -15,20 +15,18 @@ import android.widget.ExpandableListView
 import codeone.com.br.mobile_gym_pass.R
 import codeone.com.br.mobile_gym_pass.commons.activity.BaseActivity
 import codeone.com.br.mobile_gym_pass.commons.util.alert
-import codeone.com.br.mobile_gym_pass.commons.util.toast
+import codeone.com.br.mobile_gym_pass.commons.util.setupToolbar
 import codeone.com.br.mobile_gym_pass.features.company.adapter.EmpresaAdapter
 import codeone.com.br.mobile_gym_pass.features.company.domain.Empresa
 import codeone.com.br.mobile_gym_pass.features.regions.adapter.ThreeLevelListAdapter
 import codeone.com.br.mobile_gym_pass.features.regions.presenter.MainPresenter
+import java.util.LinkedHashMap
+import codeone.com.br.mobile_gym_pass.features.company.activity.CompanyActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_company.*
-import java.util.LinkedHashMap
-import codeone.com.br.mobile_gym_pass.commons.util.setupToolbar
-import codeone.com.br.mobile_gym_pass.features.company.activity.CompanyActivity
 import kotlinx.android.synthetic.main.include_toolbar.*
 import org.jetbrains.anko.startActivity
-
 
 class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedListener, MainPresenter.ViewCallBack {
 
@@ -61,8 +59,8 @@ class MainActivity() : BaseActivity(), NavigationView.OnNavigationItemSelectedLi
 
 
     override fun setUpRecycler() {
-        rvCompany.layoutManager = LinearLayoutManager(this)
-        rvCompany.itemAnimator = DefaultItemAnimator()
+        rvCompany.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
+        rvCompany.itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
     }
 
     override fun setUpProgress(show:Boolean) {

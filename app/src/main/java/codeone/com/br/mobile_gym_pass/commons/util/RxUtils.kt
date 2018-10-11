@@ -1,10 +1,10 @@
 package codeone.com.br.mobile_gym_pass.commons.util
 
-import android.arch.lifecycle.Lifecycle
-import android.arch.lifecycle.LifecycleObserver
-import android.arch.lifecycle.LifecycleOwner
-import android.arch.lifecycle.OnLifecycleEvent
-import android.support.annotation.CallSuper
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.OnLifecycleEvent
+import androidx.annotation.CallSuper
 import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.disposables.CompositeDisposable
@@ -60,21 +60,21 @@ fun <T : Any> Observable<T>.subscribeAwareBy(compositeDisposable: CompositeDispo
     this.subscribe(object: ObservableAware<T>(compositeDisposable, lifecycleOwner) {
         override fun onNext(t: T) {
             super.onNext(t)
-            if (lifecycleOwner.lifecycle.currentState != android.arch.lifecycle.Lifecycle.State.DESTROYED) {
+            if (lifecycleOwner.lifecycle.currentState != androidx.lifecycle.Lifecycle.State.DESTROYED) {
                 onNext(t)
             }
         }
 
         override fun onError(e: Throwable) {
             super.onError(e)
-            if (lifecycleOwner.lifecycle.currentState != android.arch.lifecycle.Lifecycle.State.DESTROYED) {
+            if (lifecycleOwner.lifecycle.currentState != androidx.lifecycle.Lifecycle.State.DESTROYED) {
                 onError(e)
             }
         }
 
         override fun onComplete() {
             super.onComplete()
-            if (lifecycleOwner.lifecycle.currentState != android.arch.lifecycle.Lifecycle.State.DESTROYED) {
+            if (lifecycleOwner.lifecycle.currentState != androidx.lifecycle.Lifecycle.State.DESTROYED) {
                 onComplete()
             }
         }

@@ -2,7 +2,7 @@ package codeone.com.br.mobile_gym_pass.commons.activity
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 
 @SuppressLint("Registered")
 open class BaseActivity: AppCompatActivity() {

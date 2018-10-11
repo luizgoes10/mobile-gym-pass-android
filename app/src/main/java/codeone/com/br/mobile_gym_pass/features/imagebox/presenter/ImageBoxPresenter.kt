@@ -1,6 +1,6 @@
 package codeone.com.br.mobile_gym_pass.features.imagebox.presenter
 
-import android.arch.lifecycle.LifecycleOwner
+import androidx.lifecycle.LifecycleOwner
 import codeone.com.br.mobile_gym_pass.commons.presenter.BasePresenter
 import codeone.com.br.mobile_gym_pass.features.imagebox.domain.ImagemBox
 import codeone.com.br.mobile_gym_pass.features.box.domain.Box

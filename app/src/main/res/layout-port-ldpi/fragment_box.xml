@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:context="codeone.com.br.mobile_gym_pass.features.box.fragment.BoxFragment">
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         app:cardElevation="6dp"
         app:cardPreventCornerOverlap="false"
         app:cardUseCompatPadding="true"
@@ -25,11 +25,11 @@
             android:gravity="start|center_horizontal"
             android:textSize="13sp"/>
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:layout_marginTop="6dp"
         app:cardElevation="6dp"
         app:cardPreventCornerOverlap="false"
@@ -50,7 +50,7 @@
             android:gravity="start|center_horizontal"
             android:text="@string/hello_blank_fragment" />
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 
 </LinearLayout>
