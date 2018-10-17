@@ -8,14 +8,42 @@
 
     <!-- Outras cores -->
     <color name="transparent">#0000</color>
+    <color name="gray">#cccccc</color>
     <color name="white">#fff</color>
     <color name="black">#000</color>
-    <color name="blue">#00f</color>
+    <color name="quantum">#111111</color>
+
     <color name="red">#f00</color>
-    <color name="green">#0f0</color>
+
     <color name="yellow">#fff000</color>
-    <color name="gray">#cccccc</color>
+    <color name="gold">#FFD700</color>
+    <color name="golden">#DAA520</color>
+    <color name="golden_dark">#B8860B</color>
+    <color name="golden_light">#EEE8AA</color>
+    <color name="orange">#FFA500</color>
+    <color name="orange_dark">#FF8C00</color>
+    <color name="orange_light">#FFB84D</color>
+
+    <color name="customActionBar">#ff4073</color>
+    <color name="customActionBar1">#609</color>
+    <color name="customBackGround">#5e660099</color>
+    <color name="customBackGround1">#27660099</color>
+
+    <color name="green">#0f0</color>
+    <color name="dark_green">#008000</color>
+    <color name="spectrum_green">#00FF00</color>
+
+    <color name="purple">#993399</color>
+    <color name="purple_brasilis">#8A008A</color>
+
     <color name="azure">#F0FFFF</color>
+    <color name="blue_slate">#6A5ACD</color>
+    <color name="blue_slate_light">#8470FF</color>
+    <color name="blue_slate_dark">#483D8B</color>
+    <color name="blue_slate_medium">#7B68EE</color>
+    <color name="blue">#00f</color>
+    <color name="bright_blue_sky">#007FFF</color>
+
 
     <!-- SwipeRefreshLayout -->
     <!-- azul -->

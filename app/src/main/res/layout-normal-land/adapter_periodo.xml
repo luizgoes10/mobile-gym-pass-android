@@ -7,7 +7,6 @@
     android:layout_margin="6dp"
     app:cardElevation="6dp"
     app:cardPreventCornerOverlap="true"
-    app:cardUseCompatPadding="true"
     card_view:cardCornerRadius="2dp"
     card_view:cardElevation="6dp"
     android:foreground="?attr/selectableItemBackground"
@@ -15,8 +14,10 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="6dp"
+        android:background="@color/azure"
         android:orientation="vertical">
 
 
@@ -24,15 +25,14 @@
             android:id="@+id/tNamePeriodo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
             android:textSize="20sp" />
 
 
-            <TextView
-                android:id="@+id/tValor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/hello_word" />
+        <TextView
+            android:id="@+id/tValor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_word" />
 
 
     </LinearLayout>
