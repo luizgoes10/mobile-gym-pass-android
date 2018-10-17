@@ -16,47 +16,47 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tTxtAmbiente"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/fundo_device"
-            android:layout_margin="6dp"
-            android:fontFamily="monospace"
-            android:textStyle="italic|bold"
-            android:gravity="start|center_horizontal"
-            android:padding="5dp"
-            android:textColor="@color/black"
-            android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tTxtAmbiente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_style"
+                android:layout_margin="6dp"
+                android:fontFamily="monospace"
+                android:textStyle="italic|bold"
+                android:gravity="start|center_horizontal"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
 
 
     </androidx.cardview.widget.CardView>
 
 
-
     <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="-10dp"
+        android:foreground="?attr/selectableItemBackground"
         app:cardElevation="6dp"
         app:cardPreventCornerOverlap="false"
         app:cardUseCompatPadding="true"
         tools:cardCornerRadius="2dp"
-        tools:cardElevation="6dp"
-        android:foreground="?attr/selectableItemBackground"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        tools:cardElevation="6dp">
 
         <TextView
             android:id="@+id/tNmInfoImportante"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/fundo_device"
             android:layout_margin="6dp"
             android:fontFamily="monospace"
-            android:textStyle="italic|bold"
             android:gravity="start|center_horizontal"
             android:padding="5dp"
             android:textColor="@color/black"
-            android:textSize="13sp" />
+            android:textSize="13sp"
+            android:textStyle="italic|bold" />
 
     </androidx.cardview.widget.CardView>
 
