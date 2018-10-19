@@ -23,12 +23,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:background="@mipmap/ic_fundo_device_foreground_favorite"
-            android:fontFamily="monospace"
+            android:fontFamily="@font/abril_fatface_latin"
             android:gravity="start|center_horizontal"
             android:padding="5dp"
             android:textColor="@color/black"
-            android:textSize="13sp"
-            android:textStyle="italic|bold" />
+            android:textSize="13sp" />
 
 
 
@@ -52,12 +51,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:background="@mipmap/ic_fundo_device_foreground_favorite"
-            android:fontFamily="monospace"
+            android:fontFamily="@font/abril_fatface_latin"
             android:gravity="start|center_horizontal"
             android:padding="5dp"
             android:textColor="@color/black"
-            android:textSize="13sp"
-            android:textStyle="italic|bold" />
+            android:textSize="13sp" />
 
     </androidx.cardview.widget.CardView>
 

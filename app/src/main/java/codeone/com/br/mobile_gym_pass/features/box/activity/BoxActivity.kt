@@ -2,6 +2,7 @@ package codeone.com.br.mobile_gym_pass.features.box.activity
 
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.Toolbar
 import codeone.com.br.mobile_gym_pass.R
 import codeone.com.br.mobile_gym_pass.commons.activity.BaseActivity
 import codeone.com.br.mobile_gym_pass.commons.util.addFragment

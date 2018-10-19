@@ -17,22 +17,27 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="6dp"
-        android:background="@color/azure"
+        android:background="@mipmap/ic_fundo_device_foreground_favorite"
         android:orientation="vertical">
 
 
         <TextView
             android:id="@+id/tNamePeriodo"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/abril_fatface_latin"
+            android:padding="5dp"
+            android:textColor="@color/black"
             android:textSize="20sp" />
 
 
         <TextView
             android:id="@+id/tValor"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/hello_word" />
+            android:fontFamily="@font/abril_fatface_latin_ext"
+            android:padding="5dp"
+            android:textColor="@color/black" />
 
 
     </LinearLayout>

@@ -20,10 +20,13 @@
             android:id="@+id/tTxtAmbiente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/azure"
             android:layout_margin="6dp"
+            android:background="@mipmap/ic_fundo_device_foreground_favorite"
+            android:fontFamily="@font/abril_fatface_latin"
             android:gravity="start|center_horizontal"
-            android:textSize="13sp"/>
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
 
     </androidx.cardview.widget.CardView>
 
@@ -42,12 +45,15 @@
 
         <TextView
             android:id="@+id/tNmInfoImportante"
-            android:layout_margin="6dp"
-            android:background="@color/azure"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="13sp"
-            android:gravity="start|center_horizontal"/>
+            android:layout_margin="6dp"
+            android:background="@mipmap/ic_fundo_device_foreground_favorite"
+            android:fontFamily="@font/abril_fatface_latin"
+            android:gravity="start|center_horizontal"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
 
     </androidx.cardview.widget.CardView>
 
