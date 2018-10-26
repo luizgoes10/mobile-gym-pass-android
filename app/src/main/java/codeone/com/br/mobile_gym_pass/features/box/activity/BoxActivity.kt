@@ -30,14 +30,22 @@ class BoxActivity : BaseActivity(),BoxActivityPresenter.ViewCallBack {
         presenter.onViewCreated()
     }
 
-    override fun setUpFragments() {
-
+    override fun setUpExpandebleImage() {
         expandedImage.loadUrl(box.imgFoto)
-        val fragPeriodo = PeriodoFragment()
+    }
+
+    override fun setUpFragmentBox() {
         val fragBox = BoxFragment()
+        addFragment(R.id.frameBox, fragBox)
+    }
+
+    override fun setUpFragmentPeriodo() {
+        val fragPeriodo = PeriodoFragment()
         addFragment(R.id.framePeriodo, fragPeriodo)
-       addFragment(R.id.frameBox, fragBox)
-    if(!box.imageBox.isEmpty()){
+    }
+
+    override fun setUpFragmentImageBox() {
+        if(!box.imageBox.isEmpty()){
             val fragImageBox = ImagemBoxFragment()
             addFragment(R.id.frameImageBox, fragImageBox)
         }else{

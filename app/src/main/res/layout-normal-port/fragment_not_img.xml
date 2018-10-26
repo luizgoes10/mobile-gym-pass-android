@@ -1,24 +1,18 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:card_view="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    tools:context="codeone.com.br.mobile_gym_pass.features.imagebox.fragment.NotImgFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <androidx.cardview.widget.CardView
+<androidx.cardview.widget.CardView
         xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:card_view="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view_imagem_box_sem_foto"
-        android:layout_marginLeft="@dimen/nav_header_height"
         app:cardElevation="6dp"
         app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
         card_view:cardCornerRadius="2dp"
         card_view:cardElevation="6dp"
         android:foreground="?attr/selectableItemBackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        tools:context="codeone.com.br.mobile_gym_pass.features.imagebox.fragment.NotImgFragment"
         card_view:ignore="MissingDefaultResource">
 
         <FrameLayout
@@ -27,7 +21,7 @@
 
             <ImageView
                 android:id="@+id/imgSemFoto"
-                android:layout_width="120dp"
+                android:layout_width="388dp"
                 android:layout_height="150dp"
                 android:layout_gravity="start"
                 android:layout_margin="6dp" />
@@ -43,6 +37,5 @@
 
         </FrameLayout>
 
-    </androidx.cardview.widget.CardView>
+</androidx.cardview.widget.CardView>
 
-</FrameLayout>

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="codeone.com.br.mobile_gym_pass.features.box.fragment.BoxesFragment">
+    tools:context="codeone.com.br.mobile_gym_pass.features.periodo.fragment.PeriodoFragment">
 
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

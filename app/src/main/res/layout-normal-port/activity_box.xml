@@ -24,7 +24,8 @@
             <FrameLayout
                 android:id="@+id/frameImageBox"
                 android:layout_width="match_parent"
-                android:layout_height="175dp" />
+                android:layout_height="175dp"/>
+
 
             <FrameLayout
                 android:id="@+id/framePeriodo"
