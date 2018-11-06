@@ -7,13 +7,14 @@
     android:layout_margin="6dp"
     app:cardElevation="6dp"
     app:cardPreventCornerOverlap="true"
-    app:cardUseCompatPadding="true"
     card_view:cardCornerRadius="2dp"
     card_view:cardElevation="6dp"
     android:foreground="?attr/selectableItemBackground"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     card_view:ignore="MissingDefaultResource">
+
+    <!--app:cardUseCompatPadding="true" sempre tirar no caso -->
 
     <FrameLayout
         android:layout_width="wrap_content"
