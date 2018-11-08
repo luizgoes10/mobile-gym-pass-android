@@ -7,12 +7,13 @@
     android:layout_margin="6dp"
     app:cardElevation="6dp"
     app:cardPreventCornerOverlap="true"
-    app:cardUseCompatPadding="true"
     card_view:cardCornerRadius="2dp"
     card_view:cardElevation="6dp"
     android:foreground="?attr/selectableItemBackground"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
+    <!--app:cardUseCompatPadding="true" sempre retirar esse atributo para não ficar muito espaçado-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,15 +27,19 @@
             android:id="@+id/tNamePeriodo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:fontFamily="@font/abril_fatface_latin"
+            android:padding="5dp"
+            android:textColor="@color/black"
             android:textSize="20sp" />
 
 
-            <TextView
-                android:id="@+id/tValor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/hello_word" />
+        <TextView
+            android:id="@+id/tValor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:padding="5dp"
+            android:fontFamily="@font/abril_fatface_latin_ext"/>
 
 
     </LinearLayout>
