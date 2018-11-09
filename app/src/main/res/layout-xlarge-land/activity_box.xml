@@ -18,13 +18,12 @@
             <FrameLayout
                 android:id="@+id/frameBox"
                 android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="0dp"/>
+                android:layout_height="wrap_content"/>
 
             <FrameLayout
                 android:id="@+id/frameImageBox"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"/>
+                android:layout_height="183dp" />
 
             <FrameLayout
                 android:id="@+id/framePeriodo"
@@ -37,9 +36,9 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="620dp"
+        android:layout_height="295dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="false">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar"
@@ -68,6 +67,16 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabActBox"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_favorite_black_24dp"
+        android:tint="@color/azure"
+        app:layout_anchor="@+id/appbar"
+        app:layout_anchorGravity="bottom|right|end"/>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
